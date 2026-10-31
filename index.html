@@ -25,7 +25,7 @@
   .stat b { display:block; font:800 2.2rem/1.1 "Playfair Display", Georgia, serif; color:var(--accent); }
   .stat span { font:400 .85rem/1.35 system-ui, sans-serif; color:var(--muted); }
   figure { margin:1.8rem 0 0; }
-  .chart { overflow-x:auto; }                 /* a chart scrolls inside its own box, never the whole page */
+  .chart { overflow-x:auto; }                 
   figcaption { font:400 .85rem/1.4 system-ui, sans-serif; color:var(--muted); margin-top:.6rem; max-width:70ch; }
   .row { display:grid; grid-template-columns:auto auto; gap:24px; align-items:start; justify-content:start; }
   .row figure { margin-top:1.8rem; min-width:0; }
@@ -192,7 +192,6 @@
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.3.0"></script>
 <script>
-  // Every chart: the element on the page and its human-readable spec file in /specs.
   const charts = [
     { el: "#area-decades", spec: "specs/area_decades.vl.json" },
     { el: "#waffle",       spec: "specs/waffle_attribution.vl.json" },
@@ -208,7 +207,6 @@
     { el: "#ridgeline",    spec: "specs/ridgeline_places.vl.json" },
     { el: "#wordcloud",    spec: "specs/wordcloud_era.vg.json" }
   ];
-  // Wait for the web fonts so the word cloud measures words with the right typeface.
   const fontsReady = Promise.all([
     document.fonts.load('18px "Source Serif 4"'),
     document.fonts.load('600 18px "Playfair Display"')
