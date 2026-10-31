@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega/v6.json",
-  "description": "Section 4: themes in photo captions, each split by the era of the photo.",
+  "description": "Section 4: the most common caption words, grouped by what they describe (treemap), with an era selector.",
   "width": 780,
   "height": 440,
   "padding": 5,
@@ -8,55 +8,251 @@
   "background": "#f4ecdc",
   "data": [
     {
-      "name": "raw",
-      "url": "data/decade_theme.csv",
-      "format": {
-        "type": "csv",
-        "parse": {
-          "n": "number",
-          "decade": "number"
-        }
-      },
-      "transform": [
+      "name": "groups",
+      "values": [
         {
-          "type": "filter",
-          "expr": "datum.decade >= 1860 && datum.decade <= 1950"
+          "word": "street",
+          "group": "Streets and buildings"
         },
         {
-          "type": "formula",
-          "expr": "datum.decade < 1900 ? 'Before 1900' : (datum.decade < 1920 ? '1900-1919' : (datum.decade < 1940 ? '1920-1939' : '1940 onwards'))",
-          "as": "era"
+          "word": "building",
+          "group": "Streets and buildings"
+        },
+        {
+          "word": "house",
+          "group": "Streets and buildings"
+        },
+        {
+          "word": "hotel",
+          "group": "Streets and buildings"
+        },
+        {
+          "word": "school",
+          "group": "Streets and buildings"
+        },
+        {
+          "word": "church",
+          "group": "Streets and buildings"
+        },
+        {
+          "word": "home",
+          "group": "Streets and buildings"
+        },
+        {
+          "word": "hall",
+          "group": "Streets and buildings"
+        },
+        {
+          "word": "bank",
+          "group": "Streets and buildings"
+        },
+        {
+          "word": "office",
+          "group": "Streets and buildings"
+        },
+        {
+          "word": "hospital",
+          "group": "Streets and buildings"
+        },
+        {
+          "word": "station",
+          "group": "Railways and roads"
+        },
+        {
+          "word": "railway",
+          "group": "Railways and roads"
+        },
+        {
+          "word": "bridge",
+          "group": "Railways and roads"
+        },
+        {
+          "word": "road",
+          "group": "Railways and roads"
+        },
+        {
+          "word": "construction",
+          "group": "Railways and roads"
+        },
+        {
+          "word": "river",
+          "group": "Rivers and water"
+        },
+        {
+          "word": "creek",
+          "group": "Rivers and water"
+        },
+        {
+          "word": "flood",
+          "group": "Rivers and water"
+        },
+        {
+          "word": "island",
+          "group": "Rivers and water"
+        },
+        {
+          "word": "water",
+          "group": "Rivers and water"
+        },
+        {
+          "word": "timber",
+          "group": "Farming and industry"
+        },
+        {
+          "word": "sugar",
+          "group": "Farming and industry"
+        },
+        {
+          "word": "gold",
+          "group": "Farming and industry"
+        },
+        {
+          "word": "farm",
+          "group": "Farming and industry"
+        },
+        {
+          "word": "family",
+          "group": "People and events"
+        },
+        {
+          "word": "children",
+          "group": "People and events"
+        },
+        {
+          "word": "people",
+          "group": "People and events"
+        },
+        {
+          "word": "women",
+          "group": "People and events"
+        },
+        {
+          "word": "queen",
+          "group": "People and events"
+        },
+        {
+          "word": "army",
+          "group": "People and events"
+        },
+        {
+          "word": "royal",
+          "group": "People and events"
+        },
+        {
+          "word": "march",
+          "group": "People and events"
+        },
+        {
+          "word": "world",
+          "group": "People and events"
+        },
+        {
+          "word": "american",
+          "group": "People and events"
+        },
+        {
+          "word": "town",
+          "group": "Towns and places"
+        },
+        {
+          "word": "district",
+          "group": "Towns and places"
+        },
+        {
+          "word": "mount",
+          "group": "Towns and places"
+        },
+        {
+          "word": "city",
+          "group": "Towns and places"
+        },
+        {
+          "word": "park",
+          "group": "Towns and places"
+        },
+        {
+          "word": "bundaberg",
+          "group": "Towns and places"
+        },
+        {
+          "word": "gympie",
+          "group": "Towns and places"
+        },
+        {
+          "word": "warwick",
+          "group": "Towns and places"
+        },
+        {
+          "word": "cairns",
+          "group": "Towns and places"
+        },
+        {
+          "word": "mackay",
+          "group": "Towns and places"
+        },
+        {
+          "word": "stanthorpe",
+          "group": "Towns and places"
         }
       ]
     },
     {
-      "name": "leaf",
-      "source": "raw",
+      "name": "raw",
+      "url": "data/words_by_era.csv",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "n": "number"
+        }
+      },
       "transform": [
+        {
+          "type": "formula",
+          "expr": "(eraSel == 'All eras' || datum.era == eraSel) ? datum.n : 0",
+          "as": "v"
+        },
         {
           "type": "aggregate",
           "groupby": [
-            "theme",
-            "era"
+            "word"
           ],
           "fields": [
-            "n"
+            "v"
           ],
           "ops": [
             "sum"
           ],
           "as": [
             "size"
+          ],
+          "drop": false
+        },
+        {
+          "type": "lookup",
+          "from": "groups",
+          "key": "word",
+          "fields": [
+            "word"
+          ],
+          "values": [
+            "group"
+          ],
+          "as": [
+            "group"
           ]
         },
         {
+          "type": "filter",
+          "expr": "datum.group != null"
+        },
+        {
           "type": "formula",
-          "expr": "datum.theme + '|' + datum.era",
+          "expr": "datum.group + '|' + datum.word",
           "as": "id"
         },
         {
           "type": "formula",
-          "expr": "datum.theme",
+          "expr": "datum.group",
           "as": "parent"
         }
       ]
@@ -68,21 +264,22 @@
         {
           "type": "aggregate",
           "groupby": [
-            "theme"
+            "group"
           ],
           "fields": [
-            "n"
+            "size"
           ],
           "ops": [
             "sum"
           ],
           "as": [
             "total"
-          ]
+          ],
+          "drop": false
         },
         {
           "type": "formula",
-          "expr": "datum.theme",
+          "expr": "datum.group",
           "as": "id"
         },
         {
@@ -106,7 +303,7 @@
       "source": [
         "rootnode",
         "mid",
-        "leaf"
+        "raw"
       ],
       "transform": [
         {
@@ -137,35 +334,24 @@
   ],
   "scales": [
     {
-      "name": "era",
+      "name": "g",
       "type": "ordinal",
       "domain": [
-        "Before 1900",
-        "1900-1919",
-        "1920-1939",
-        "1940 onwards"
+        "Streets and buildings",
+        "Railways and roads",
+        "Rivers and water",
+        "Farming and industry",
+        "People and events",
+        "Towns and places"
       ],
       "range": [
-        "#e3c89a",
-        "#d49a5a",
-        "#a85a3a",
-        "#5a2a1f"
+        "#8c5a3c",
+        "#3b5b7a",
+        "#4f6d5a",
+        "#8f6f0a",
+        "#a4463b",
+        "#6b4f7a"
       ]
-    }
-  ],
-  "legends": [
-    {
-      "fill": "era",
-      "title": "Era of the photo",
-      "orient": "bottom",
-      "direction": "horizontal",
-      "symbolType": "square",
-      "symbolSize": 160,
-      "titleColor": "#2b2118",
-      "labelColor": "#2b2118",
-      "labelFontSize": 12,
-      "titleFontSize": 12,
-      "columnPadding": 22
     }
   ],
   "marks": [
@@ -191,10 +377,10 @@
         },
         "update": {
           "fill": {
-            "signal": "datum.depth == 2 ? scale('era', datum.era) : (datum.depth == 1 ? '#e2d3b8' : 'transparent')"
+            "signal": "datum.depth == 2 ? (datum.size > 0 ? scale('g', datum.group) : 'transparent') : (datum.depth == 1 ? (datum.total > 0 ? '#e2d3b8' : 'transparent') : 'transparent')"
           },
           "tooltip": {
-            "signal": "datum.depth == 2 ? {'Theme': datum.theme, 'Era': datum.era, 'Caption mentions': format(datum.size, ',')} : (datum.depth == 1 ? {'Theme': datum.theme, 'Caption mentions': format(datum.total, ',')} : null)"
+            "signal": "datum.depth == 2 ? {'Word': datum.word, 'Group': datum.group, 'Appearances in captions': format(datum.size, ',')} : (datum.depth == 1 ? {'Group': datum.group, 'Appearances': format(datum.total, ',')} : null)"
           }
         }
       }
@@ -233,7 +419,7 @@
             "signal": "datum.x1 - datum.x0 - 10"
           },
           "text": {
-            "signal": "datum.depth == 1 ? datum.theme : ''"
+            "signal": "datum.depth == 1 && datum.total > 0 && (datum.x1 - datum.x0) > 24 ? datum.group : ''"
           }
         }
       }
@@ -248,30 +434,50 @@
           "baseline": {
             "value": "top"
           },
-          "fontSize": {
-            "value": 10.5
+          "fill": {
+            "value": "#fbf6ea"
           },
           "font": {
             "value": "Source Serif 4, Georgia, serif"
+          },
+          "fontWeight": {
+            "value": "bold"
           }
         },
         "update": {
           "x": {
-            "signal": "datum.x0 + 4"
+            "signal": "datum.x0 + 5"
           },
           "y": {
-            "signal": "datum.y0 + 3"
+            "signal": "datum.y0 + 4"
           },
           "limit": {
-            "signal": "datum.x1 - datum.x0 - 6"
+            "signal": "datum.x1 - datum.x0 - 8"
           },
-          "fill": {
-            "signal": "indexof(['1920-1939','1940 onwards'], datum.era) >= 0 ? '#fbf6ea' : '#2b2118'"
+          "fontSize": {
+            "signal": "(datum.x1 - datum.x0) > 110 && (datum.y1 - datum.y0) > 60 ? 15 : 11"
           },
           "text": {
-            "signal": "datum.depth == 2 && (datum.y1 - datum.y0) > 16 && (datum.x1 - datum.x0) > 54 ? replace(datum.era, 'Before ', '<') : ''"
+            "signal": "datum.depth == 2 && datum.size > 0 && (datum.y1 - datum.y0) > 16 && (datum.x1 - datum.x0) > 36 ? datum.word : ''"
           }
         }
+      }
+    }
+  ],
+  "signals": [
+    {
+      "name": "eraSel",
+      "value": "All eras",
+      "bind": {
+        "input": "radio",
+        "name": "Show words from: ",
+        "options": [
+          "All eras",
+          "Before 1900",
+          "1900-1919",
+          "1920-1939",
+          "1940 onwards"
+        ]
       }
     }
   ]

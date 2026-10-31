@@ -32,6 +32,9 @@
   @media (max-width: 900px) { .row { grid-template-columns:1fr; } }
   .todo { background:#fff3c4; border-left:4px solid #c9a227; padding:.4rem .7rem; font:400 .85rem/1.4 system-ui, sans-serif; }
   .note { font:400 .9rem/1.5 system-ui, sans-serif; color:var(--muted); max-width:62ch; border-left:3px solid var(--accent); padding-left:.8rem; margin-top:1.5rem; }
+  .vega-bindings { font:400 .9rem/1.4 system-ui, sans-serif; color:var(--ink); margin-top:.8rem; }
+  .vega-bindings label { margin-right:1rem; white-space:nowrap; }
+  .vega-bindings input { accent-color:var(--accent); margin-right:.3rem; }
   footer { margin-top:5rem; font:400 .85rem/1.55 system-ui, sans-serif; color:var(--muted);
            border-top:1px solid var(--grid); padding-top:1rem; }
   footer h3 { font:600 .8rem/1 system-ui, sans-serif; letter-spacing:.1em; text-transform:uppercase; color:var(--ink); margin:1.2rem 0 .4rem; }
@@ -142,7 +145,7 @@
     </figure>
     <figure>
       <div id="treemap" class="chart"></div>
-      <figcaption>Themes in the captions of photos with a date and a place. Each theme box is split by era of the photo; box area shows how often the theme is mentioned (a photo can mention several). Hover a box for the numbers. Source: State Library of Queensland; themes assigned by keyword matching.</figcaption>
+      <figcaption>The most common words in photo titles and descriptions, sorted by hand into six groups of what they describe. Box area shows how often the word appears. Choose an era with the buttons to see which words stand out then; the smallest boxes are unlabelled, so hover over them. Each era counts only its 40 most common words. Place names are included. Source: State Library of Queensland.</figcaption>
     </figure>
     <p class="text" style="margin-top:1.6rem">Different towns were photographed at different times. Some places,
       such as Mount Isa, have sharp bursts of photographs; others, such as Brisbane, are spread across the whole period.</p>
