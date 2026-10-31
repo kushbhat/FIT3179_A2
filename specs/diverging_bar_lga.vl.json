@@ -1,0 +1,152 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Section 3: the eight council areas furthest above and below their share of residents.",
+  "width": 200,
+  "height": 330,
+  "data": {
+    "url": "data/lga_share.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "diff_pp": "number",
+        "photos": "number",
+        "photo_share_pct": "number",
+        "pop_share_pct": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "hi"
+        }
+      ],
+      "sort": [
+        {
+          "field": "diff_pp",
+          "order": "descending"
+        }
+      ]
+    },
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "lo"
+        }
+      ],
+      "sort": [
+        {
+          "field": "diff_pp",
+          "order": "ascending"
+        }
+      ]
+    },
+    {
+      "filter": "datum.hi <= 8 || datum.lo <= 8"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar"
+      },
+      "encoding": {
+        "y": {
+          "field": "lga_name",
+          "type": "nominal",
+          "sort": {
+            "field": "diff_pp",
+            "order": "descending"
+          },
+          "title": null,
+          "axis": {
+            "labelLimit": 120,
+            "labelPadding": 6,
+            "orient": "left"
+          }
+        },
+        "x": {
+          "field": "diff_pp",
+          "type": "quantitative",
+          "title": "Photo share minus resident share (points)",
+          "axis": {
+            "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value"
+          }
+        },
+        "color": {
+          "condition": {
+            "test": "datum.diff_pp > 0",
+            "value": "#8c3b2a"
+          },
+          "value": "#3b5b7a"
+        },
+        "tooltip": [
+          {
+            "field": "lga_name",
+            "title": "Council area"
+          },
+          {
+            "field": "photos",
+            "title": "Photos",
+            "format": ","
+          },
+          {
+            "field": "photo_share_pct",
+            "title": "Share of photos (%)"
+          },
+          {
+            "field": "pop_share_pct",
+            "title": "Share of residents (%)"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#2b2118",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "datum": 0
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "#f4ecdc",
+    "font": "Source Serif 4, Georgia, serif",
+    "axis": {
+      "labelColor": "#6f6254",
+      "titleColor": "#2b2118",
+      "gridColor": "#e2d6bf",
+      "domainColor": "#b9a98e",
+      "tickColor": "#b9a98e",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFont": "Source Serif 4, Georgia, serif",
+      "labelFont": "Source Serif 4, Georgia, serif"
+    },
+    "legend": {
+      "labelColor": "#6f6254",
+      "titleColor": "#2b2118",
+      "labelFont": "Source Serif 4, Georgia, serif",
+      "titleFont": "Source Serif 4, Georgia, serif"
+    },
+    "title": {
+      "color": "#2b2118",
+      "font": "Playfair Display, Georgia, serif",
+      "fontSize": 15,
+      "anchor": "start",
+      "subtitleColor": "#6f6254",
+      "subtitleFont": "Source Serif 4, Georgia, serif"
+    }
+  }
+}

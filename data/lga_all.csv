@@ -1,0 +1,176 @@
+lga_code,lga_name,kind,n
+11200,Brewarrina,Everything else,1
+11350,Byron,Everything else,3
+14220,Inverell,Everything else,1
+14550,Kyogle,Everything else,1
+14550,Kyogle,Portraits,1
+14850,Lismore,Everything else,5
+15300,Moree Plains,Everything else,11
+17400,Tenterfield,Everything else,7
+17400,Tenterfield,Portraits,1
+17550,Tweed,Everything else,346
+17550,Tweed,Portraits,9
+17550,Tweed,Ships,21
+30250,Aurukun,Everything else,1
+30300,Balonne,Everything else,174
+30300,Balonne,Portraits,15
+30370,Banana,Everything else,172
+30370,Banana,Portraits,17
+30410,Barcaldine,Everything else,205
+30410,Barcaldine,Portraits,8
+30450,Barcoo,Everything else,57
+30450,Barcoo,Portraits,1
+30760,Blackall Tambo,Everything else,315
+30760,Blackall Tambo,Portraits,12
+30900,Boulia,Everything else,138
+30900,Boulia,Portraits,5
+31000,Brisbane,Everything else,11292
+31000,Brisbane,Portraits,1291
+31000,Brisbane,Ships,155
+31750,Bulloo,Everything else,50
+31750,Bulloo,Portraits,1
+31820,Bundaberg,Everything else,1034
+31820,Bundaberg,Portraits,44
+31820,Bundaberg,Ships,7
+31900,Burdekin,Everything else,146
+31900,Burdekin,Portraits,8
+31950,Burke,Everything else,59
+31950,Burke,Portraits,2
+31950,Burke,Ships,1
+32080,Cairns,Everything else,912
+32080,Cairns,Portraits,22
+32080,Cairns,Ships,13
+32250,Carpentaria,Everything else,90
+32250,Carpentaria,Portraits,3
+32250,Carpentaria,Ships,3
+32260,Cassowary Coast,Everything else,422
+32260,Cassowary Coast,Portraits,12
+32260,Cassowary Coast,Ships,5
+32270,Central Highlands (Qld),Everything else,344
+32270,Central Highlands (Qld),Portraits,14
+32310,Charters Towers,Everything else,549
+32310,Charters Towers,Portraits,36
+32450,Cloncurry,Everything else,161
+32450,Cloncurry,Portraits,21
+32450,Cloncurry,Ships,1
+32500,Cook,Everything else,189
+32500,Cook,Portraits,13
+32500,Cook,Ships,19
+32600,Croydon,Everything else,80
+32600,Croydon,Portraits,4
+32750,Diamantina,Everything else,46
+32810,Douglas,Everything else,108
+32810,Douglas,Portraits,1
+32810,Douglas,Ships,1
+33100,Etheridge,Everything else,32
+33200,Flinders (Qld),Everything else,198
+33200,Flinders (Qld),Portraits,8
+33220,Fraser Coast,Everything else,349
+33220,Fraser Coast,Portraits,123
+33220,Fraser Coast,Ships,25
+33360,Gladstone,Everything else,126
+33360,Gladstone,Portraits,17
+33360,Gladstone,Ships,4
+33430,Gold Coast,Everything else,576
+33430,Gold Coast,Portraits,33
+33430,Gold Coast,Ships,4
+33610,Goondiwindi,Everything else,260
+33610,Goondiwindi,Portraits,16
+33620,Gympie,Everything else,316
+33620,Gympie,Portraits,26
+33800,Hinchinbrook,Everything else,155
+33800,Hinchinbrook,Portraits,11
+33830,Hope Vale,Everything else,3
+33830,Hope Vale,Ships,2
+33960,Ipswich,Everything else,404
+33960,Ipswich,Portraits,133
+33980,Isaac,Everything else,191
+33980,Isaac,Portraits,23
+34530,Livingstone,Everything else,155
+34530,Livingstone,Portraits,12
+34530,Livingstone,Ships,1
+34580,Lockyer Valley,Everything else,153
+34580,Lockyer Valley,Portraits,20
+34590,Logan,Everything else,108
+34590,Logan,Portraits,14
+34710,Longreach,Everything else,146
+34710,Longreach,Portraits,5
+34770,Mackay,Everything else,562
+34770,Mackay,Portraits,153
+34770,Mackay,Ships,16
+34800,McKinlay,Everything else,39
+34800,McKinlay,Portraits,1
+34830,Mapoon,Everything else,5
+34830,Mapoon,Portraits,1
+34860,Maranoa,Everything else,213
+34860,Maranoa,Portraits,23
+34880,Mareeba,Everything else,271
+34880,Mareeba,Portraits,14
+34880,Mareeba,Ships,1
+35010,Moreton Bay,Everything else,444
+35010,Moreton Bay,Portraits,71
+35010,Moreton Bay,Ships,9
+35250,Mornington,Everything else,5
+35300,Mount Isa,Everything else,450
+35300,Mount Isa,Portraits,12
+35300,Mount Isa,Ships,1
+35600,Murweh,Everything else,447
+35600,Murweh,Portraits,26
+35740,Noosa,Everything else,261
+35740,Noosa,Portraits,4
+35740,Noosa,Ships,1
+35760,North Burnett,Everything else,415
+35760,North Burnett,Portraits,19
+35760,North Burnett,Ships,1
+35780,Northern Peninsula Area,Everything else,8
+35790,Palm Island,Everything else,4
+35790,Palm Island,Ships,1
+35800,Paroo,Everything else,116
+35800,Paroo,Portraits,7
+36150,Quilpie,Everything else,87
+36150,Quilpie,Portraits,3
+36250,Redland,Everything else,311
+36250,Redland,Portraits,18
+36250,Redland,Ships,5
+36300,Richmond,Everything else,33
+36300,Richmond,Portraits,4
+36370,Rockhampton,Everything else,637
+36370,Rockhampton,Portraits,151
+36370,Rockhampton,Ships,8
+36510,Scenic Rim,Everything else,792
+36510,Scenic Rim,Portraits,82
+36510,Scenic Rim,Ships,2
+36580,Somerset,Everything else,363
+36580,Somerset,Portraits,32
+36630,South Burnett,Everything else,357
+36630,South Burnett,Portraits,49
+36630,South Burnett,Ships,1
+36660,Southern Downs,Everything else,1075
+36660,Southern Downs,Portraits,126
+36720,Sunshine Coast,Everything else,489
+36720,Sunshine Coast,Portraits,107
+36720,Sunshine Coast,Ships,6
+36820,Tablelands,Everything else,265
+36820,Tablelands,Portraits,19
+36910,Toowoomba,Everything else,985
+36910,Toowoomba,Portraits,116
+36950,Torres,Everything else,74
+36950,Torres,Portraits,13
+36950,Torres,Ships,16
+36960,Torres Strait Island,Everything else,16
+37010,Townsville,Everything else,409
+37010,Townsville,Portraits,53
+37010,Townsville,Ships,23
+37310,Western Downs,Everything else,477
+37310,Western Downs,Portraits,27
+37340,Whitsunday,Everything else,476
+37340,Whitsunday,Portraits,13
+37340,Whitsunday,Ships,10
+37400,Winton,Everything else,285
+37400,Winton,Portraits,28
+37550,Woorabinda,Everything else,1
+37600,Yarrabah,Everything else,5
+49399,Unincorporated SA,Everything else,3
+,,Everything else,493
+,,Portraits,3
+,,Ships,62

@@ -1,0 +1,519 @@
+lga_code,lga_name,kind,era,n
+11350,Byron,Everything else,1900-1919,1
+11350,Byron,Everything else,1920-1939,2
+14550,Kyogle,Everything else,1920-1939,1
+14850,Lismore,Everything else,1920-1939,3
+15300,Moree Plains,Everything else,1920-1939,7
+15300,Moree Plains,Everything else,1940 onwards,1
+15300,Moree Plains,Everything else,Before 1900,3
+17400,Tenterfield,Everything else,1900-1919,1
+17400,Tenterfield,Everything else,1920-1939,1
+17400,Tenterfield,Everything else,Before 1900,2
+17550,Tweed,Everything else,1900-1919,160
+17550,Tweed,Everything else,1920-1939,110
+17550,Tweed,Everything else,1940 onwards,23
+17550,Tweed,Everything else,Before 1900,19
+17550,Tweed,Portraits,1900-1919,3
+17550,Tweed,Portraits,1920-1939,1
+17550,Tweed,Ships,1900-1919,3
+17550,Tweed,Ships,1920-1939,2
+17550,Tweed,Ships,Before 1900,3
+30250,Aurukun,Everything else,1940 onwards,1
+30300,Balonne,Everything else,1900-1919,56
+30300,Balonne,Everything else,1920-1939,58
+30300,Balonne,Everything else,1940 onwards,19
+30300,Balonne,Everything else,Before 1900,17
+30300,Balonne,Portraits,1920-1939,1
+30300,Balonne,Portraits,Before 1900,3
+30370,Banana,Everything else,1900-1919,19
+30370,Banana,Everything else,1920-1939,71
+30370,Banana,Everything else,1940 onwards,49
+30370,Banana,Everything else,Before 1900,19
+30370,Banana,Portraits,1900-1919,1
+30370,Banana,Portraits,1920-1939,2
+30370,Banana,Portraits,Before 1900,4
+30410,Barcaldine,Everything else,1900-1919,68
+30410,Barcaldine,Everything else,1920-1939,48
+30410,Barcaldine,Everything else,1940 onwards,22
+30410,Barcaldine,Everything else,Before 1900,42
+30410,Barcaldine,Portraits,1900-1919,1
+30410,Barcaldine,Portraits,1920-1939,1
+30410,Barcaldine,Portraits,Before 1900,2
+30450,Barcoo,Everything else,1900-1919,11
+30450,Barcoo,Everything else,1920-1939,12
+30450,Barcoo,Everything else,1940 onwards,27
+30450,Barcoo,Portraits,1920-1939,1
+30760,Blackall Tambo,Everything else,1900-1919,127
+30760,Blackall Tambo,Everything else,1920-1939,61
+30760,Blackall Tambo,Everything else,1940 onwards,21
+30760,Blackall Tambo,Everything else,Before 1900,36
+30760,Blackall Tambo,Portraits,1900-1919,1
+30760,Blackall Tambo,Portraits,1920-1939,2
+30760,Blackall Tambo,Portraits,Before 1900,2
+30900,Boulia,Everything else,1900-1919,43
+30900,Boulia,Everything else,1920-1939,47
+30900,Boulia,Everything else,1940 onwards,17
+30900,Boulia,Everything else,Before 1900,8
+30900,Boulia,Portraits,1900-1919,2
+30900,Boulia,Portraits,1920-1939,2
+30900,Boulia,Portraits,1940 onwards,1
+31000,Brisbane,Everything else,1900-1919,2699
+31000,Brisbane,Everything else,1920-1939,3293
+31000,Brisbane,Everything else,1940 onwards,1791
+31000,Brisbane,Everything else,Before 1900,2189
+31000,Brisbane,Portraits,1900-1919,241
+31000,Brisbane,Portraits,1920-1939,213
+31000,Brisbane,Portraits,1940 onwards,206
+31000,Brisbane,Portraits,Before 1900,176
+31000,Brisbane,Ships,1900-1919,24
+31000,Brisbane,Ships,1920-1939,38
+31000,Brisbane,Ships,1940 onwards,9
+31000,Brisbane,Ships,Before 1900,33
+31750,Bulloo,Everything else,1900-1919,10
+31750,Bulloo,Everything else,1920-1939,8
+31750,Bulloo,Everything else,1940 onwards,3
+31750,Bulloo,Everything else,Before 1900,7
+31750,Bulloo,Portraits,1920-1939,1
+31820,Bundaberg,Everything else,1900-1919,341
+31820,Bundaberg,Everything else,1920-1939,328
+31820,Bundaberg,Everything else,1940 onwards,99
+31820,Bundaberg,Everything else,Before 1900,190
+31820,Bundaberg,Portraits,1900-1919,15
+31820,Bundaberg,Portraits,1920-1939,5
+31820,Bundaberg,Portraits,1940 onwards,7
+31820,Bundaberg,Portraits,Before 1900,4
+31820,Bundaberg,Ships,1920-1939,1
+31820,Bundaberg,Ships,Before 1900,3
+31900,Burdekin,Everything else,1900-1919,30
+31900,Burdekin,Everything else,1920-1939,50
+31900,Burdekin,Everything else,1940 onwards,32
+31900,Burdekin,Everything else,Before 1900,13
+31900,Burdekin,Portraits,1900-1919,1
+31900,Burdekin,Portraits,1920-1939,4
+31950,Burke,Everything else,1900-1919,18
+31950,Burke,Everything else,1920-1939,33
+31950,Burke,Everything else,1940 onwards,5
+31950,Burke,Everything else,Before 1900,1
+31950,Burke,Portraits,1920-1939,1
+32080,Cairns,Everything else,1900-1919,226
+32080,Cairns,Everything else,1920-1939,269
+32080,Cairns,Everything else,1940 onwards,72
+32080,Cairns,Everything else,Before 1900,248
+32080,Cairns,Portraits,1900-1919,6
+32080,Cairns,Portraits,1920-1939,3
+32080,Cairns,Portraits,1940 onwards,1
+32080,Cairns,Portraits,Before 1900,5
+32080,Cairns,Ships,1900-1919,2
+32080,Cairns,Ships,1920-1939,2
+32080,Cairns,Ships,Before 1900,2
+32250,Carpentaria,Everything else,1900-1919,9
+32250,Carpentaria,Everything else,1920-1939,29
+32250,Carpentaria,Everything else,1940 onwards,25
+32250,Carpentaria,Everything else,Before 1900,21
+32250,Carpentaria,Portraits,Before 1900,3
+32250,Carpentaria,Ships,1920-1939,2
+32260,Cassowary Coast,Everything else,1900-1919,61
+32260,Cassowary Coast,Everything else,1920-1939,201
+32260,Cassowary Coast,Everything else,1940 onwards,61
+32260,Cassowary Coast,Everything else,Before 1900,27
+32260,Cassowary Coast,Portraits,1900-1919,1
+32260,Cassowary Coast,Portraits,1920-1939,3
+32260,Cassowary Coast,Portraits,1940 onwards,4
+32260,Cassowary Coast,Ships,1900-1919,1
+32260,Cassowary Coast,Ships,1920-1939,1
+32260,Cassowary Coast,Ships,Before 1900,1
+32270,Central Highlands (Qld),Everything else,1900-1919,100
+32270,Central Highlands (Qld),Everything else,1920-1939,115
+32270,Central Highlands (Qld),Everything else,1940 onwards,24
+32270,Central Highlands (Qld),Everything else,Before 1900,51
+32270,Central Highlands (Qld),Portraits,1900-1919,4
+32270,Central Highlands (Qld),Portraits,1920-1939,1
+32310,Charters Towers,Everything else,1900-1919,172
+32310,Charters Towers,Everything else,1920-1939,89
+32310,Charters Towers,Everything else,1940 onwards,40
+32310,Charters Towers,Everything else,Before 1900,146
+32310,Charters Towers,Portraits,1900-1919,14
+32310,Charters Towers,Portraits,1920-1939,2
+32310,Charters Towers,Portraits,1940 onwards,1
+32310,Charters Towers,Portraits,Before 1900,7
+32450,Cloncurry,Everything else,1900-1919,46
+32450,Cloncurry,Everything else,1920-1939,62
+32450,Cloncurry,Everything else,1940 onwards,16
+32450,Cloncurry,Everything else,Before 1900,4
+32450,Cloncurry,Portraits,1900-1919,4
+32450,Cloncurry,Portraits,1920-1939,11
+32450,Cloncurry,Portraits,1940 onwards,2
+32450,Cloncurry,Ships,1920-1939,1
+32500,Cook,Everything else,1900-1919,59
+32500,Cook,Everything else,1920-1939,25
+32500,Cook,Everything else,1940 onwards,12
+32500,Cook,Everything else,Before 1900,67
+32500,Cook,Portraits,1900-1919,5
+32500,Cook,Portraits,1920-1939,2
+32500,Cook,Portraits,Before 1900,4
+32500,Cook,Ships,1920-1939,2
+32500,Cook,Ships,Before 1900,1
+32600,Croydon,Everything else,1900-1919,36
+32600,Croydon,Everything else,1920-1939,8
+32600,Croydon,Everything else,1940 onwards,3
+32600,Croydon,Everything else,Before 1900,25
+32600,Croydon,Portraits,1900-1919,2
+32750,Diamantina,Everything else,1900-1919,9
+32750,Diamantina,Everything else,1920-1939,28
+32750,Diamantina,Everything else,1940 onwards,6
+32810,Douglas,Everything else,1900-1919,31
+32810,Douglas,Everything else,1920-1939,39
+32810,Douglas,Everything else,1940 onwards,5
+32810,Douglas,Everything else,Before 1900,30
+32810,Douglas,Portraits,1900-1919,1
+32810,Douglas,Ships,1900-1919,1
+33100,Etheridge,Everything else,1900-1919,10
+33100,Etheridge,Everything else,1920-1939,11
+33100,Etheridge,Everything else,Before 1900,5
+33200,Flinders (Qld),Everything else,1900-1919,38
+33200,Flinders (Qld),Everything else,1920-1939,48
+33200,Flinders (Qld),Everything else,1940 onwards,15
+33200,Flinders (Qld),Everything else,Before 1900,16
+33200,Flinders (Qld),Portraits,1900-1919,2
+33200,Flinders (Qld),Portraits,Before 1900,1
+33220,Fraser Coast,Everything else,1900-1919,121
+33220,Fraser Coast,Everything else,1920-1939,106
+33220,Fraser Coast,Everything else,1940 onwards,17
+33220,Fraser Coast,Everything else,Before 1900,38
+33220,Fraser Coast,Portraits,1900-1919,41
+33220,Fraser Coast,Portraits,1920-1939,15
+33220,Fraser Coast,Portraits,1940 onwards,8
+33220,Fraser Coast,Portraits,Before 1900,17
+33220,Fraser Coast,Ships,1900-1919,2
+33220,Fraser Coast,Ships,1920-1939,6
+33220,Fraser Coast,Ships,Before 1900,3
+33360,Gladstone,Everything else,1900-1919,35
+33360,Gladstone,Everything else,1920-1939,46
+33360,Gladstone,Everything else,1940 onwards,5
+33360,Gladstone,Everything else,Before 1900,27
+33360,Gladstone,Portraits,1900-1919,3
+33360,Gladstone,Portraits,1940 onwards,1
+33360,Gladstone,Portraits,Before 1900,3
+33360,Gladstone,Ships,1920-1939,1
+33430,Gold Coast,Everything else,1900-1919,142
+33430,Gold Coast,Everything else,1920-1939,227
+33430,Gold Coast,Everything else,1940 onwards,81
+33430,Gold Coast,Everything else,Before 1900,59
+33430,Gold Coast,Portraits,1900-1919,4
+33430,Gold Coast,Portraits,1920-1939,6
+33430,Gold Coast,Portraits,1940 onwards,9
+33430,Gold Coast,Portraits,Before 1900,1
+33430,Gold Coast,Ships,1900-1919,1
+33430,Gold Coast,Ships,1920-1939,1
+33430,Gold Coast,Ships,Before 1900,1
+33610,Goondiwindi,Everything else,1900-1919,91
+33610,Goondiwindi,Everything else,1920-1939,72
+33610,Goondiwindi,Everything else,1940 onwards,17
+33610,Goondiwindi,Everything else,Before 1900,47
+33610,Goondiwindi,Portraits,1900-1919,3
+33610,Goondiwindi,Portraits,1920-1939,1
+33610,Goondiwindi,Portraits,Before 1900,5
+33620,Gympie,Everything else,1900-1919,85
+33620,Gympie,Everything else,1920-1939,82
+33620,Gympie,Everything else,1940 onwards,18
+33620,Gympie,Everything else,Before 1900,92
+33620,Gympie,Portraits,1900-1919,7
+33620,Gympie,Portraits,1920-1939,2
+33620,Gympie,Portraits,Before 1900,6
+33800,Hinchinbrook,Everything else,1900-1919,28
+33800,Hinchinbrook,Everything else,1920-1939,33
+33800,Hinchinbrook,Everything else,1940 onwards,7
+33800,Hinchinbrook,Everything else,Before 1900,78
+33800,Hinchinbrook,Portraits,1900-1919,3
+33800,Hinchinbrook,Portraits,1920-1939,1
+33800,Hinchinbrook,Portraits,Before 1900,3
+33830,Hope Vale,Everything else,1900-1919,1
+33830,Hope Vale,Everything else,Before 1900,2
+33830,Hope Vale,Ships,1940 onwards,1
+33960,Ipswich,Everything else,1900-1919,118
+33960,Ipswich,Everything else,1920-1939,78
+33960,Ipswich,Everything else,1940 onwards,19
+33960,Ipswich,Everything else,Before 1900,100
+33960,Ipswich,Portraits,1900-1919,23
+33960,Ipswich,Portraits,1920-1939,15
+33960,Ipswich,Portraits,1940 onwards,1
+33960,Ipswich,Portraits,Before 1900,35
+33980,Isaac,Everything else,1900-1919,51
+33980,Isaac,Everything else,1920-1939,43
+33980,Isaac,Everything else,1940 onwards,7
+33980,Isaac,Everything else,Before 1900,34
+33980,Isaac,Portraits,1900-1919,10
+33980,Isaac,Portraits,1920-1939,2
+33980,Isaac,Portraits,Before 1900,2
+34530,Livingstone,Everything else,1900-1919,40
+34530,Livingstone,Everything else,1920-1939,71
+34530,Livingstone,Everything else,1940 onwards,12
+34530,Livingstone,Everything else,Before 1900,17
+34530,Livingstone,Portraits,1900-1919,3
+34530,Livingstone,Portraits,1920-1939,3
+34530,Livingstone,Portraits,Before 1900,1
+34530,Livingstone,Ships,1920-1939,1
+34580,Lockyer Valley,Everything else,1900-1919,75
+34580,Lockyer Valley,Everything else,1920-1939,29
+34580,Lockyer Valley,Everything else,1940 onwards,3
+34580,Lockyer Valley,Everything else,Before 1900,24
+34580,Lockyer Valley,Portraits,1900-1919,5
+34580,Lockyer Valley,Portraits,1920-1939,4
+34580,Lockyer Valley,Portraits,Before 1900,2
+34590,Logan,Everything else,1900-1919,40
+34590,Logan,Everything else,1920-1939,19
+34590,Logan,Everything else,1940 onwards,6
+34590,Logan,Everything else,Before 1900,29
+34590,Logan,Portraits,1900-1919,7
+34590,Logan,Portraits,1920-1939,1
+34590,Logan,Portraits,Before 1900,3
+34710,Longreach,Everything else,1900-1919,48
+34710,Longreach,Everything else,1920-1939,58
+34710,Longreach,Everything else,1940 onwards,4
+34710,Longreach,Everything else,Before 1900,19
+34710,Longreach,Portraits,1900-1919,1
+34710,Longreach,Portraits,1920-1939,1
+34710,Longreach,Portraits,1940 onwards,2
+34770,Mackay,Everything else,1900-1919,90
+34770,Mackay,Everything else,1920-1939,71
+34770,Mackay,Everything else,1940 onwards,30
+34770,Mackay,Everything else,Before 1900,281
+34770,Mackay,Portraits,1900-1919,28
+34770,Mackay,Portraits,1920-1939,5
+34770,Mackay,Portraits,1940 onwards,4
+34770,Mackay,Portraits,Before 1900,25
+34770,Mackay,Ships,1900-1919,4
+34770,Mackay,Ships,1920-1939,2
+34770,Mackay,Ships,Before 1900,3
+34800,McKinlay,Everything else,1900-1919,5
+34800,McKinlay,Everything else,1920-1939,24
+34800,McKinlay,Everything else,1940 onwards,7
+34800,McKinlay,Portraits,Before 1900,1
+34830,Mapoon,Everything else,1900-1919,3
+34830,Mapoon,Everything else,Before 1900,2
+34830,Mapoon,Portraits,1920-1939,1
+34860,Maranoa,Everything else,1900-1919,59
+34860,Maranoa,Everything else,1920-1939,53
+34860,Maranoa,Everything else,1940 onwards,10
+34860,Maranoa,Everything else,Before 1900,54
+34860,Maranoa,Portraits,1900-1919,4
+34860,Maranoa,Portraits,1920-1939,3
+34860,Maranoa,Portraits,1940 onwards,1
+34860,Maranoa,Portraits,Before 1900,6
+34880,Mareeba,Everything else,1900-1919,128
+34880,Mareeba,Everything else,1920-1939,66
+34880,Mareeba,Everything else,1940 onwards,11
+34880,Mareeba,Everything else,Before 1900,32
+34880,Mareeba,Portraits,1900-1919,8
+34880,Mareeba,Portraits,1920-1939,2
+34880,Mareeba,Ships,1940 onwards,1
+35010,Moreton Bay,Everything else,1900-1919,110
+35010,Moreton Bay,Everything else,1920-1939,152
+35010,Moreton Bay,Everything else,1940 onwards,50
+35010,Moreton Bay,Everything else,Before 1900,27
+35010,Moreton Bay,Portraits,1900-1919,22
+35010,Moreton Bay,Portraits,1920-1939,18
+35010,Moreton Bay,Portraits,1940 onwards,2
+35010,Moreton Bay,Portraits,Before 1900,2
+35010,Moreton Bay,Ships,1900-1919,4
+35010,Moreton Bay,Ships,1940 onwards,1
+35250,Mornington,Everything else,Before 1900,5
+35300,Mount Isa,Everything else,1900-1919,12
+35300,Mount Isa,Everything else,1920-1939,315
+35300,Mount Isa,Everything else,1940 onwards,103
+35300,Mount Isa,Everything else,Before 1900,2
+35300,Mount Isa,Portraits,1900-1919,3
+35300,Mount Isa,Portraits,1920-1939,8
+35600,Murweh,Everything else,1900-1919,164
+35600,Murweh,Everything else,1920-1939,157
+35600,Murweh,Everything else,1940 onwards,54
+35600,Murweh,Everything else,Before 1900,45
+35600,Murweh,Portraits,1900-1919,7
+35600,Murweh,Portraits,1920-1939,6
+35600,Murweh,Portraits,Before 1900,4
+35740,Noosa,Everything else,1900-1919,74
+35740,Noosa,Everything else,1920-1939,92
+35740,Noosa,Everything else,1940 onwards,39
+35740,Noosa,Everything else,Before 1900,13
+35740,Noosa,Portraits,1900-1919,1
+35740,Noosa,Portraits,1920-1939,2
+35740,Noosa,Portraits,Before 1900,1
+35760,North Burnett,Everything else,1900-1919,108
+35760,North Burnett,Everything else,1920-1939,115
+35760,North Burnett,Everything else,1940 onwards,50
+35760,North Burnett,Everything else,Before 1900,22
+35760,North Burnett,Portraits,1900-1919,1
+35760,North Burnett,Portraits,1920-1939,4
+35760,North Burnett,Portraits,1940 onwards,1
+35760,North Burnett,Portraits,Before 1900,4
+35780,Northern Peninsula Area,Everything else,1920-1939,5
+35780,Northern Peninsula Area,Everything else,Before 1900,3
+35790,Palm Island,Everything else,1920-1939,3
+35790,Palm Island,Everything else,Before 1900,1
+35790,Palm Island,Ships,1920-1939,1
+35800,Paroo,Everything else,1900-1919,18
+35800,Paroo,Everything else,1920-1939,40
+35800,Paroo,Everything else,1940 onwards,6
+35800,Paroo,Everything else,Before 1900,41
+35800,Paroo,Portraits,1900-1919,1
+35800,Paroo,Portraits,1920-1939,1
+35800,Paroo,Portraits,Before 1900,2
+36150,Quilpie,Everything else,1900-1919,35
+36150,Quilpie,Everything else,1920-1939,40
+36150,Quilpie,Everything else,1940 onwards,2
+36150,Quilpie,Everything else,Before 1900,1
+36150,Quilpie,Portraits,1920-1939,1
+36150,Quilpie,Portraits,1940 onwards,1
+36250,Redland,Everything else,1900-1919,111
+36250,Redland,Everything else,1920-1939,68
+36250,Redland,Everything else,1940 onwards,23
+36250,Redland,Everything else,Before 1900,65
+36250,Redland,Portraits,1900-1919,8
+36250,Redland,Portraits,1920-1939,7
+36250,Redland,Portraits,Before 1900,2
+36250,Redland,Ships,Before 1900,2
+36300,Richmond,Everything else,1900-1919,13
+36300,Richmond,Everything else,1920-1939,8
+36300,Richmond,Everything else,1940 onwards,3
+36300,Richmond,Everything else,Before 1900,3
+36300,Richmond,Portraits,1900-1919,3
+36300,Richmond,Portraits,Before 1900,1
+36370,Rockhampton,Everything else,1900-1919,306
+36370,Rockhampton,Everything else,1920-1939,77
+36370,Rockhampton,Everything else,1940 onwards,32
+36370,Rockhampton,Everything else,Before 1900,167
+36370,Rockhampton,Portraits,1900-1919,18
+36370,Rockhampton,Portraits,1920-1939,8
+36370,Rockhampton,Portraits,1940 onwards,4
+36370,Rockhampton,Portraits,Before 1900,65
+36370,Rockhampton,Ships,1900-1919,2
+36370,Rockhampton,Ships,Before 1900,3
+36510,Scenic Rim,Everything else,1900-1919,304
+36510,Scenic Rim,Everything else,1920-1939,247
+36510,Scenic Rim,Everything else,1940 onwards,60
+36510,Scenic Rim,Everything else,Before 1900,55
+36510,Scenic Rim,Portraits,1900-1919,15
+36510,Scenic Rim,Portraits,1920-1939,19
+36510,Scenic Rim,Portraits,1940 onwards,5
+36510,Scenic Rim,Portraits,Before 1900,6
+36510,Scenic Rim,Ships,Before 1900,1
+36580,Somerset,Everything else,1900-1919,138
+36580,Somerset,Everything else,1920-1939,150
+36580,Somerset,Everything else,1940 onwards,12
+36580,Somerset,Everything else,Before 1900,21
+36580,Somerset,Portraits,1900-1919,8
+36580,Somerset,Portraits,1920-1939,5
+36580,Somerset,Portraits,1940 onwards,2
+36580,Somerset,Portraits,Before 1900,3
+36630,South Burnett,Everything else,1900-1919,109
+36630,South Burnett,Everything else,1920-1939,143
+36630,South Burnett,Everything else,1940 onwards,43
+36630,South Burnett,Everything else,Before 1900,3
+36630,South Burnett,Portraits,1900-1919,15
+36630,South Burnett,Portraits,1920-1939,13
+36630,South Burnett,Portraits,1940 onwards,3
+36630,South Burnett,Portraits,Before 1900,4
+36630,South Burnett,Ships,Before 1900,1
+36660,Southern Downs,Everything else,1900-1919,280
+36660,Southern Downs,Everything else,1920-1939,321
+36660,Southern Downs,Everything else,1940 onwards,64
+36660,Southern Downs,Everything else,Before 1900,295
+36660,Southern Downs,Portraits,1900-1919,20
+36660,Southern Downs,Portraits,1920-1939,11
+36660,Southern Downs,Portraits,1940 onwards,4
+36660,Southern Downs,Portraits,Before 1900,40
+36720,Sunshine Coast,Everything else,1900-1919,165
+36720,Sunshine Coast,Everything else,1920-1939,181
+36720,Sunshine Coast,Everything else,1940 onwards,37
+36720,Sunshine Coast,Everything else,Before 1900,40
+36720,Sunshine Coast,Portraits,1900-1919,28
+36720,Sunshine Coast,Portraits,1920-1939,11
+36720,Sunshine Coast,Portraits,1940 onwards,9
+36720,Sunshine Coast,Portraits,Before 1900,14
+36720,Sunshine Coast,Ships,1900-1919,3
+36720,Sunshine Coast,Ships,1920-1939,1
+36720,Sunshine Coast,Ships,Before 1900,1
+36820,Tablelands,Everything else,1900-1919,83
+36820,Tablelands,Everything else,1920-1939,102
+36820,Tablelands,Everything else,1940 onwards,18
+36820,Tablelands,Everything else,Before 1900,32
+36820,Tablelands,Portraits,1900-1919,10
+36820,Tablelands,Portraits,1920-1939,1
+36820,Tablelands,Portraits,1940 onwards,1
+36820,Tablelands,Portraits,Before 1900,5
+36910,Toowoomba,Everything else,1900-1919,376
+36910,Toowoomba,Everything else,1920-1939,247
+36910,Toowoomba,Everything else,1940 onwards,55
+36910,Toowoomba,Everything else,Before 1900,168
+36910,Toowoomba,Portraits,1900-1919,26
+36910,Toowoomba,Portraits,1920-1939,24
+36910,Toowoomba,Portraits,1940 onwards,3
+36910,Toowoomba,Portraits,Before 1900,24
+36950,Torres,Everything else,1900-1919,15
+36950,Torres,Everything else,1920-1939,29
+36950,Torres,Everything else,1940 onwards,16
+36950,Torres,Everything else,Before 1900,5
+36950,Torres,Portraits,1900-1919,6
+36950,Torres,Portraits,1920-1939,5
+36950,Torres,Portraits,1940 onwards,1
+36950,Torres,Ships,1900-1919,1
+36950,Torres,Ships,1920-1939,10
+36950,Torres,Ships,1940 onwards,1
+36950,Torres,Ships,Before 1900,1
+36960,Torres Strait Island,Everything else,1900-1919,4
+36960,Torres Strait Island,Everything else,1920-1939,3
+36960,Torres Strait Island,Everything else,1940 onwards,2
+36960,Torres Strait Island,Everything else,Before 1900,6
+37010,Townsville,Everything else,1900-1919,133
+37010,Townsville,Everything else,1920-1939,114
+37010,Townsville,Everything else,1940 onwards,50
+37010,Townsville,Everything else,Before 1900,77
+37010,Townsville,Portraits,1900-1919,31
+37010,Townsville,Portraits,1920-1939,4
+37010,Townsville,Portraits,1940 onwards,4
+37010,Townsville,Portraits,Before 1900,5
+37010,Townsville,Ships,1900-1919,7
+37010,Townsville,Ships,1920-1939,5
+37010,Townsville,Ships,1940 onwards,2
+37010,Townsville,Ships,Before 1900,1
+37310,Western Downs,Everything else,1900-1919,109
+37310,Western Downs,Everything else,1920-1939,224
+37310,Western Downs,Everything else,1940 onwards,36
+37310,Western Downs,Everything else,Before 1900,56
+37310,Western Downs,Portraits,1900-1919,4
+37310,Western Downs,Portraits,1920-1939,5
+37310,Western Downs,Portraits,1940 onwards,4
+37310,Western Downs,Portraits,Before 1900,3
+37340,Whitsunday,Everything else,1900-1919,132
+37340,Whitsunday,Everything else,1920-1939,198
+37340,Whitsunday,Everything else,1940 onwards,42
+37340,Whitsunday,Everything else,Before 1900,43
+37340,Whitsunday,Portraits,1900-1919,2
+37340,Whitsunday,Portraits,1920-1939,3
+37340,Whitsunday,Portraits,1940 onwards,1
+37340,Whitsunday,Portraits,Before 1900,2
+37340,Whitsunday,Ships,1900-1919,1
+37340,Whitsunday,Ships,1920-1939,4
+37340,Whitsunday,Ships,1940 onwards,1
+37400,Winton,Everything else,1900-1919,51
+37400,Winton,Everything else,1920-1939,117
+37400,Winton,Everything else,1940 onwards,36
+37400,Winton,Everything else,Before 1900,25
+37400,Winton,Portraits,1900-1919,3
+37400,Winton,Portraits,1920-1939,7
+37400,Winton,Portraits,1940 onwards,2
+37400,Winton,Portraits,Before 1900,1
+37600,Yarrabah,Everything else,1900-1919,2
+37600,Yarrabah,Everything else,Before 1900,2
+49399,Unincorporated SA,Everything else,1900-1919,1
+49399,Unincorporated SA,Everything else,1920-1939,1
+,,Everything else,1900-1919,133
+,,Everything else,1920-1939,158
+,,Everything else,1940 onwards,54
+,,Everything else,Before 1900,56
+,,Portraits,1920-1939,1
+,,Portraits,1940 onwards,1
+,,Ships,1900-1919,10
+,,Ships,1920-1939,14
+,,Ships,1940 onwards,3
+,,Ships,Before 1900,12

@@ -1,0 +1,269 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Section 3: how the council areas with the most photos rank in each era (bump chart).",
+  "width": 520,
+  "height": 340,
+  "data": {
+    "url": "data/lga_era.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "n": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "filter": "datum.lga_name != null && datum.lga_name != ''"
+    },
+    {
+      "aggregate": [
+        {
+          "op": "sum",
+          "field": "n",
+          "as": "photos"
+        }
+      ],
+      "groupby": [
+        "lga_name",
+        "era"
+      ]
+    },
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "photos",
+          "order": "descending"
+        }
+      ],
+      "groupby": [
+        "era"
+      ]
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "min",
+          "field": "rank",
+          "as": "best"
+        },
+        {
+          "op": "max",
+          "field": "rank",
+          "as": "worst"
+        }
+      ],
+      "groupby": [
+        "lga_name"
+      ]
+    },
+    {
+      "filter": "datum.worst <= 12"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3,
+        "interpolate": "monotone"
+      },
+      "encoding": {
+        "x": {
+          "field": "era",
+          "type": "ordinal",
+          "sort": [
+            "Before 1900",
+            "1900-1919",
+            "1920-1939",
+            "1940 onwards"
+          ],
+          "axis": {
+            "title": null,
+            "labelAngle": 0,
+            "grid": false,
+            "orient": "top"
+          },
+          "scale": {
+            "padding": 0.5
+          }
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              12.5,
+              0.5
+            ]
+          },
+          "axis": {
+            "title": "Rank by number of photos",
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12
+            ],
+            "grid": true
+          }
+        },
+        "color": {
+          "field": "lga_name",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "range": [
+              "#8c3b2a",
+              "#3b5b7a",
+              "#4f6d5a",
+              "#8f6f0a",
+              "#6b4f7a",
+              "#a4463b",
+              "#7a6f64",
+              "#8c5a3c",
+              "#2b2118",
+              "#b0894f"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 110,
+        "stroke": "#f4ecdc",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "era",
+          "type": "ordinal",
+          "sort": [
+            "Before 1900",
+            "1900-1919",
+            "1920-1939",
+            "1940 onwards"
+          ]
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "lga_name",
+          "type": "nominal",
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "lga_name",
+            "title": "Council area"
+          },
+          {
+            "field": "era",
+            "title": "Era"
+          },
+          {
+            "field": "rank",
+            "title": "Rank"
+          },
+          {
+            "field": "photos",
+            "title": "Photos",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.era == '1940 onwards'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 10,
+        "fontSize": 12,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {
+          "field": "era",
+          "type": "ordinal",
+          "sort": [
+            "Before 1900",
+            "1900-1919",
+            "1920-1939",
+            "1940 onwards"
+          ]
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "lga_name"
+        },
+        "color": {
+          "field": "lga_name",
+          "type": "nominal",
+          "legend": null
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "#f4ecdc",
+    "font": "Source Serif 4, Georgia, serif",
+    "axis": {
+      "labelColor": "#6f6254",
+      "titleColor": "#2b2118",
+      "gridColor": "#e2d6bf",
+      "domainColor": "#b9a98e",
+      "tickColor": "#b9a98e",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFont": "Source Serif 4, Georgia, serif",
+      "labelFont": "Source Serif 4, Georgia, serif"
+    },
+    "legend": {
+      "labelColor": "#6f6254",
+      "titleColor": "#2b2118",
+      "labelFont": "Source Serif 4, Georgia, serif",
+      "titleFont": "Source Serif 4, Georgia, serif"
+    },
+    "title": {
+      "color": "#2b2118",
+      "font": "Playfair Display, Georgia, serif",
+      "fontSize": 15,
+      "anchor": "start"
+    }
+  },
+  "padding": {
+    "left": 5,
+    "right": 60,
+    "top": 5,
+    "bottom": 5
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Section 2: the ten most-photographed places, split by kind of photo.",
+  "width": 230,
+  "height": 260,
+  "data": {
+    "url": "data/places_top.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "n": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "calculate": "replace(datum.place, ', Queensland', '')",
+      "as": "town"
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "n",
+          "as": "total"
+        }
+      ],
+      "groupby": [
+        "town"
+      ]
+    },
+    {
+      "window": [
+        {
+          "op": "dense_rank",
+          "as": "rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "total",
+          "order": "descending"
+        }
+      ]
+    },
+    {
+      "filter": "datum.rank <= 10"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar"
+      },
+      "encoding": {
+        "y": {
+          "field": "town",
+          "type": "nominal",
+          "sort": {
+            "field": "total",
+            "op": "max",
+            "order": "descending"
+          },
+          "title": null
+        },
+        "x": {
+          "field": "n",
+          "type": "quantitative",
+          "title": "Photos with a place",
+          "axis": {
+            "labelExpr": "format(datum.value, ',')",
+            "values": [
+              0,
+              2000,
+              4000,
+              6000
+            ]
+          }
+        },
+        "color": {
+          "field": "kind",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Everything else",
+              "Portraits",
+              "Ships"
+            ],
+            "range": [
+              "#8c5a3c",
+              "#3b5b7a",
+              "#4f6d5a"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "bottom"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "town",
+            "title": "Place"
+          },
+          {
+            "field": "kind",
+            "title": "Kind"
+          },
+          {
+            "field": "n",
+            "title": "Photos",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "aggregate": [
+            {
+              "op": "max",
+              "field": "total",
+              "as": "total"
+            }
+          ],
+          "groupby": [
+            "town"
+          ]
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 4,
+        "fontSize": 11,
+        "color": "#2b2118"
+      },
+      "encoding": {
+        "y": {
+          "field": "town",
+          "type": "nominal",
+          "sort": {
+            "field": "total",
+            "op": "max",
+            "order": "descending"
+          }
+        },
+        "x": {
+          "field": "total",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "total",
+          "type": "quantitative",
+          "format": ","
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "#f4ecdc",
+    "font": "Source Serif 4, Georgia, serif",
+    "axis": {
+      "labelColor": "#6f6254",
+      "titleColor": "#2b2118",
+      "gridColor": "#e2d6bf",
+      "domainColor": "#b9a98e",
+      "tickColor": "#b9a98e",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFont": "Source Serif 4, Georgia, serif",
+      "labelFont": "Source Serif 4, Georgia, serif"
+    },
+    "legend": {
+      "labelColor": "#6f6254",
+      "titleColor": "#2b2118",
+      "labelFont": "Source Serif 4, Georgia, serif",
+      "titleFont": "Source Serif 4, Georgia, serif"
+    },
+    "title": {
+      "color": "#2b2118",
+      "font": "Playfair Display, Georgia, serif",
+      "fontSize": 15,
+      "anchor": "start",
+      "subtitleColor": "#6f6254",
+      "subtitleFont": "Source Serif 4, Georgia, serif"
+    }
+  }
+}

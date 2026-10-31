@@ -1,0 +1,99 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Section 1: 100 squares; how many photos name the photographer.",
+  "title": {
+    "text": "About 9 in every 100 photos name the photographer",
+    "subtitle": "Each square is 1% of the 52,118 photographs"
+  },
+  "width": 200,
+  "height": 200,
+  "data": {
+    "url": "data/waffle_attribution.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "col": "number",
+        "row": "number"
+      }
+    }
+  },
+  "mark": {
+    "type": "rect",
+    "stroke": "#f4ecdc",
+    "strokeWidth": 3,
+    "cornerRadius": 2
+  },
+  "encoding": {
+    "x": {
+      "field": "col",
+      "type": "ordinal",
+      "axis": null
+    },
+    "y": {
+      "field": "row",
+      "type": "ordinal",
+      "axis": null
+    },
+    "color": {
+      "field": "attribution",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Named photographer",
+          "Unidentified"
+        ],
+        "range": [
+          "#8c3b2a",
+          "#d8ccb4"
+        ]
+      },
+      "legend": {
+        "title": null,
+        "orient": "bottom",
+        "labelLimit": 220,
+        "symbolType": "square",
+        "direction": "horizontal",
+        "columns": 2,
+        "columnPadding": 14
+      }
+    },
+    "tooltip": [
+      {
+        "field": "attribution",
+        "title": "Credit"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "#f4ecdc",
+    "font": "Source Serif 4, Georgia, serif",
+    "axis": {
+      "labelColor": "#6f6254",
+      "titleColor": "#2b2118",
+      "gridColor": "#e2d6bf",
+      "domainColor": "#b9a98e",
+      "tickColor": "#b9a98e",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFont": "Source Serif 4, Georgia, serif",
+      "labelFont": "Source Serif 4, Georgia, serif"
+    },
+    "legend": {
+      "labelColor": "#6f6254",
+      "titleColor": "#2b2118",
+      "labelFont": "Source Serif 4, Georgia, serif",
+      "titleFont": "Source Serif 4, Georgia, serif"
+    },
+    "title": {
+      "color": "#2b2118",
+      "font": "Playfair Display, Georgia, serif",
+      "fontSize": 15,
+      "anchor": "start",
+      "subtitleColor": "#6f6254",
+      "subtitleFont": "Source Serif 4, Georgia, serif"
+    }
+  }
+}

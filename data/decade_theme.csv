@@ -1,0 +1,257 @@
+decade,kind,theme,n,decade_photos
+1790,Ships,Transport,1,1
+1820,Everything else,Buildings and streets,1,4
+1820,Everything else,Landscape and water,3,4
+1820,Everything else,Transport,1,4
+1830,Everything else,Buildings and streets,4,7
+1830,Everything else,Landscape and water,5,7
+1830,Everything else,Other,1,7
+1830,Everything else,People and social life,2,7
+1830,Everything else,Transport,3,7
+1830,Everything else,War and military,2,7
+1840,Everything else,Buildings and streets,3,7
+1840,Everything else,Farming and industry,1,7
+1840,Everything else,Landscape and water,2,7
+1840,Everything else,People and social life,1,7
+1840,Everything else,Transport,2,7
+1840,Everything else,War and military,1,7
+1840,Ships,Landscape and water,1,7
+1840,Ships,Transport,1,7
+1850,Everything else,Buildings and streets,12,18
+1850,Everything else,Farming and industry,3,18
+1850,Everything else,Landscape and water,2,18
+1850,Everything else,Other,1,18
+1850,Everything else,People and social life,1,18
+1850,Everything else,Transport,4,18
+1850,Portraits,Landscape and water,1,18
+1850,Portraits,People and social life,1,18
+1860,Everything else,Buildings and streets,172,344
+1860,Everything else,Farming and industry,80,344
+1860,Everything else,Landscape and water,85,344
+1860,Everything else,Other,44,344
+1860,Everything else,People and social life,35,344
+1860,Everything else,Transport,49,344
+1860,Everything else,War and military,12,344
+1860,Portraits,Buildings and streets,7,344
+1860,Portraits,Landscape and water,2,344
+1860,Portraits,Other,24,344
+1860,Portraits,People and social life,6,344
+1860,Portraits,Transport,1,344
+1860,Portraits,War and military,4,344
+1860,Ships,Other,1,344
+1860,Ships,Transport,3,344
+1870,Everything else,Buildings and streets,539,1120
+1870,Everything else,Farming and industry,341,1120
+1870,Everything else,Landscape and water,375,1120
+1870,Everything else,Other,162,1120
+1870,Everything else,People and social life,225,1120
+1870,Everything else,Transport,131,1120
+1870,Everything else,War and military,10,1120
+1870,Portraits,Buildings and streets,21,1120
+1870,Portraits,Farming and industry,9,1120
+1870,Portraits,Landscape and water,14,1120
+1870,Portraits,Other,50,1120
+1870,Portraits,People and social life,29,1120
+1870,Portraits,Transport,4,1120
+1870,Portraits,War and military,2,1120
+1870,Ships,Landscape and water,6,1120
+1870,Ships,Other,1,1120
+1870,Ships,Transport,9,1120
+1880,Everything else,Buildings and streets,731,1581
+1880,Everything else,Farming and industry,403,1581
+1880,Everything else,Landscape and water,451,1581
+1880,Everything else,Other,176,1581
+1880,Everything else,People and social life,193,1581
+1880,Everything else,Transport,237,1581
+1880,Everything else,War and military,14,1581
+1880,Portraits,Buildings and streets,25,1581
+1880,Portraits,Farming and industry,13,1581
+1880,Portraits,Landscape and water,13,1581
+1880,Portraits,Other,51,1581
+1880,Portraits,People and social life,66,1581
+1880,Portraits,Transport,5,1581
+1880,Portraits,War and military,8,1581
+1880,Ships,Buildings and streets,1,1581
+1880,Ships,Farming and industry,1,1581
+1880,Ships,Landscape and water,6,1581
+1880,Ships,Other,1,1581
+1880,Ships,People and social life,1,1581
+1880,Ships,Transport,14,1581
+1880,Ships,War and military,2,1581
+1890,Everything else,Buildings and streets,1177,2899
+1890,Everything else,Farming and industry,749,2899
+1890,Everything else,Landscape and water,677,2899
+1890,Everything else,Other,388,2899
+1890,Everything else,People and social life,458,2899
+1890,Everything else,Transport,512,2899
+1890,Everything else,War and military,59,2899
+1890,Portraits,Buildings and streets,38,2899
+1890,Portraits,Farming and industry,17,2899
+1890,Portraits,Landscape and water,20,2899
+1890,Portraits,Other,73,2899
+1890,Portraits,People and social life,95,2899
+1890,Portraits,Transport,4,2899
+1890,Portraits,War and military,3,2899
+1890,Ships,Buildings and streets,3,2899
+1890,Ships,Farming and industry,2,2899
+1890,Ships,Landscape and water,19,2899
+1890,Ships,Other,1,2899
+1890,Ships,People and social life,2,2899
+1890,Ships,Transport,38,2899
+1890,Ships,War and military,1,2899
+1900,Everything else,Buildings and streets,1830,4393
+1900,Everything else,Farming and industry,1096,4393
+1900,Everything else,Landscape and water,800,4393
+1900,Everything else,Other,676,4393
+1900,Everything else,People and social life,860,4393
+1900,Everything else,Transport,557,4393
+1900,Everything else,War and military,204,4393
+1900,Portraits,Buildings and streets,49,4393
+1900,Portraits,Farming and industry,17,4393
+1900,Portraits,Landscape and water,21,4393
+1900,Portraits,Other,128,4393
+1900,Portraits,People and social life,132,4393
+1900,Portraits,Transport,14,4393
+1900,Portraits,War and military,27,4393
+1900,Ships,Buildings and streets,5,4393
+1900,Ships,Farming and industry,1,4393
+1900,Ships,Landscape and water,17,4393
+1900,Ships,Transport,28,4393
+1910,Everything else,Buildings and streets,1941,4886
+1910,Everything else,Farming and industry,944,4886
+1910,Everything else,Landscape and water,930,4886
+1910,Everything else,Other,660,4886
+1910,Everything else,People and social life,1014,4886
+1910,Everything else,Transport,935,4886
+1910,Everything else,War and military,522,4886
+1910,Portraits,Buildings and streets,49,4886
+1910,Portraits,Farming and industry,18,4886
+1910,Portraits,Landscape and water,26,4886
+1910,Portraits,Other,106,4886
+1910,Portraits,People and social life,172,4886
+1910,Portraits,Transport,25,4886
+1910,Portraits,War and military,56,4886
+1910,Ships,Buildings and streets,2,4886
+1910,Ships,Landscape and water,13,4886
+1910,Ships,People and social life,1,4886
+1910,Ships,Transport,37,4886
+1910,Ships,War and military,5,4886
+1920,Everything else,Buildings and streets,2115,5300
+1920,Everything else,Farming and industry,1167,5300
+1920,Everything else,Landscape and water,1206,5300
+1920,Everything else,Other,801,5300
+1920,Everything else,People and social life,882,5300
+1920,Everything else,Transport,1374,5300
+1920,Everything else,War and military,231,5300
+1920,Portraits,Buildings and streets,40,5300
+1920,Portraits,Farming and industry,22,5300
+1920,Portraits,Landscape and water,22,5300
+1920,Portraits,Other,83,5300
+1920,Portraits,People and social life,124,5300
+1920,Portraits,Transport,13,5300
+1920,Portraits,War and military,8,5300
+1920,Ships,Farming and industry,1,5300
+1920,Ships,Landscape and water,9,5300
+1920,Ships,People and social life,1,5300
+1920,Ships,Transport,26,5300
+1920,Ships,War and military,1,5300
+1930,Everything else,Buildings and streets,1717,4719
+1930,Everything else,Farming and industry,997,4719
+1930,Everything else,Landscape and water,1086,4719
+1930,Everything else,Other,891,4719
+1930,Everything else,People and social life,590,4719
+1930,Everything else,Transport,1112,4719
+1930,Everything else,War and military,154,4719
+1930,Portraits,Buildings and streets,39,4719
+1930,Portraits,Farming and industry,24,4719
+1930,Portraits,Landscape and water,26,4719
+1930,Portraits,Other,103,4719
+1930,Portraits,People and social life,82,4719
+1930,Portraits,Transport,22,4719
+1930,Portraits,War and military,11,4719
+1930,Ships,Buildings and streets,4,4719
+1930,Ships,Landscape and water,34,4719
+1930,Ships,Other,1,4719
+1930,Ships,People and social life,1,4719
+1930,Ships,Transport,66,4719
+1930,Ships,War and military,2,4719
+1940,Everything else,Buildings and streets,753,2180
+1940,Everything else,Farming and industry,318,2180
+1940,Everything else,Landscape and water,374,2180
+1940,Everything else,Other,313,2180
+1940,Everything else,People and social life,299,2180
+1940,Everything else,Transport,493,2180
+1940,Everything else,War and military,655,2180
+1940,Portraits,Buildings and streets,28,2180
+1940,Portraits,Farming and industry,6,2180
+1940,Portraits,Landscape and water,9,2180
+1940,Portraits,Other,64,2180
+1940,Portraits,People and social life,46,2180
+1940,Portraits,Transport,17,2180
+1940,Portraits,War and military,35,2180
+1940,Ships,Landscape and water,3,2180
+1940,Ships,People and social life,1,2180
+1940,Ships,Transport,5,2180
+1950,Everything else,Buildings and streets,536,1370
+1950,Everything else,Farming and industry,215,1370
+1950,Everything else,Landscape and water,226,1370
+1950,Everything else,Other,259,1370
+1950,Everything else,People and social life,173,1370
+1950,Everything else,Transport,292,1370
+1950,Everything else,War and military,82,1370
+1950,Portraits,Buildings and streets,32,1370
+1950,Portraits,Farming and industry,13,1370
+1950,Portraits,Landscape and water,11,1370
+1950,Portraits,Other,46,1370
+1950,Portraits,People and social life,26,1370
+1950,Portraits,Transport,5,1370
+1950,Portraits,War and military,9,1370
+1950,Ships,Buildings and streets,2,1370
+1950,Ships,Farming and industry,1,1370
+1950,Ships,Landscape and water,3,1370
+1950,Ships,Transport,9,1370
+1950,Ships,War and military,1,1370
+1960,Everything else,Buildings and streets,29,100
+1960,Everything else,Farming and industry,18,100
+1960,Everything else,Landscape and water,11,100
+1960,Everything else,Other,21,100
+1960,Everything else,People and social life,16,100
+1960,Everything else,Transport,25,100
+1960,Portraits,Buildings and streets,5,100
+1960,Portraits,Farming and industry,1,100
+1960,Portraits,Landscape and water,2,100
+1960,Portraits,Other,4,100
+1960,Portraits,People and social life,2,100
+1960,Ships,Transport,1,100
+1970,Everything else,Buildings and streets,14,60
+1970,Everything else,Farming and industry,4,60
+1970,Everything else,Landscape and water,17,60
+1970,Everything else,Other,21,60
+1970,Everything else,People and social life,2,60
+1970,Everything else,Transport,7,60
+1970,Everything else,War and military,1,60
+1970,Portraits,Buildings and streets,1,60
+1970,Portraits,Other,2,60
+1970,Ships,Transport,2,60
+1980,Everything else,Buildings and streets,36,58
+1980,Everything else,Farming and industry,15,58
+1980,Everything else,Landscape and water,2,58
+1980,Everything else,Other,10,58
+1980,Everything else,People and social life,2,58
+1980,Everything else,Transport,11,58
+1980,Everything else,War and military,4,58
+1980,Portraits,Other,5,58
+1990,Everything else,Buildings and streets,12,24
+1990,Everything else,Farming and industry,10,24
+1990,Everything else,Landscape and water,9,24
+1990,Everything else,Other,4,24
+1990,Everything else,People and social life,13,24
+1990,Everything else,Transport,1,24
+1990,Portraits,Other,5,24
+2000,Everything else,Buildings and streets,10,53
+2000,Everything else,Farming and industry,7,53
+2000,Everything else,Landscape and water,16,53
+2000,Everything else,Other,27,53
+2000,Everything else,People and social life,4,53
+2000,Everything else,Transport,2,53
+2000,Everything else,War and military,6,53

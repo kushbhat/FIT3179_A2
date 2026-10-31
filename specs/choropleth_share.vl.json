@@ -1,0 +1,235 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Section 3: where the archive over- and under-represents places, compared with where people live today.",
+  "data": {
+    "url": "data/qld_lga.geojson",
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
+  },
+  "transform": [
+    {
+      "lookup": "properties.lga_code",
+      "from": {
+        "data": {
+          "url": "data/lga_share.csv",
+          "format": {
+            "type": "csv",
+            "parse": {
+              "lga_code": "string",
+              "photos": "number",
+              "photo_share_pct": "number",
+              "erp_2025": "number",
+              "pop_share_pct": "number",
+              "diff_pp": "number"
+            }
+          }
+        },
+        "key": "lga_code",
+        "fields": [
+          "lga_name",
+          "photos",
+          "photo_share_pct",
+          "erp_2025",
+          "pop_share_pct",
+          "diff_pp"
+        ]
+      }
+    },
+    {
+      "calculate": "toNumber(datum.diff_pp)",
+      "as": "diff"
+    },
+    {
+      "calculate": "toNumber(datum.photos)",
+      "as": "photos_n"
+    }
+  ],
+  "hconcat": [
+    {
+      "title": {
+        "text": "All Queensland",
+        "anchor": "start",
+        "fontSize": 13,
+        "font": "Playfair Display, Georgia, serif",
+        "color": "#2b2118"
+      },
+      "width": 300,
+      "height": 380,
+      "projection": {
+        "type": "conicEqualArea",
+        "rotate": [
+          -146,
+          0
+        ],
+        "center": [
+          0,
+          -19.5
+        ],
+        "parallels": [
+          -12,
+          -26
+        ],
+        "scale": 1100
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#f4ecdc",
+        "strokeWidth": 0.4
+      },
+      "encoding": {
+        "color": {
+          "field": "diff",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -10,
+              0,
+              10
+            ],
+            "range": [
+              "#3b5b7a",
+              "#e4dfd3",
+              "#8c3b2a"
+            ],
+            "clamp": true
+          },
+          "legend": {
+            "title": "Photo share minus resident share (percentage points)",
+            "titleLimit": 0,
+            "values": [
+              -10,
+              -5,
+              0,
+              5,
+              10
+            ],
+            "format": "+d",
+            "orient": "bottom",
+            "gradientLength": 300
+          }
+        },
+        "tooltip": [
+          {
+            "field": "lga_name",
+            "title": "Council area"
+          },
+          {
+            "field": "photos_n",
+            "title": "Photos",
+            "format": ","
+          },
+          {
+            "field": "photo_share_pct",
+            "title": "Share of Queensland photos (%)"
+          },
+          {
+            "field": "pop_share_pct",
+            "title": "Share of Queensland residents, 2025 (%)"
+          }
+        ]
+      }
+    },
+    {
+      "title": {
+        "text": "South-east Queensland (zoomed)",
+        "anchor": "start",
+        "fontSize": 13,
+        "font": "Playfair Display, Georgia, serif",
+        "color": "#2b2118"
+      },
+      "width": 300,
+      "height": 380,
+      "projection": {
+        "type": "conicEqualArea",
+        "rotate": [
+          -152.6,
+          0
+        ],
+        "center": [
+          0,
+          -27.4
+        ],
+        "parallels": [
+          -26,
+          -28
+        ],
+        "scale": 8500
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#f4ecdc",
+        "strokeWidth": 0.4
+      },
+      "encoding": {
+        "color": {
+          "field": "diff",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -10,
+              0,
+              10
+            ],
+            "range": [
+              "#3b5b7a",
+              "#e4dfd3",
+              "#8c3b2a"
+            ],
+            "clamp": true
+          },
+          "legend": {
+            "title": "Photo share minus resident share (percentage points)",
+            "titleLimit": 0,
+            "values": [
+              -10,
+              -5,
+              0,
+              5,
+              10
+            ],
+            "format": "+d",
+            "orient": "bottom",
+            "gradientLength": 300
+          }
+        },
+        "tooltip": [
+          {
+            "field": "lga_name",
+            "title": "Council area"
+          },
+          {
+            "field": "photos_n",
+            "title": "Photos",
+            "format": ","
+          },
+          {
+            "field": "photo_share_pct",
+            "title": "Share of Queensland photos (%)"
+          },
+          {
+            "field": "pop_share_pct",
+            "title": "Share of Queensland residents, 2025 (%)"
+          }
+        ]
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "color": "shared"
+    }
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "#f4ecdc",
+    "font": "Source Serif 4, Georgia, serif",
+    "legend": {
+      "labelColor": "#6f6254",
+      "titleColor": "#2b2118"
+    }
+  }
+}

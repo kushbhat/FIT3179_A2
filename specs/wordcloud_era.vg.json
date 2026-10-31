@@ -1,0 +1,144 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "description": "Section 4: the most common caption words in each era.",
+  "width": 790,
+  "height": 480,
+  "padding": 5,
+  "autosize": "pad",
+  "background": "#f4ecdc",
+  "data": [
+    {
+      "name": "words",
+      "url": "data/words_by_era.csv",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "n": "number"
+        }
+      },
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "indexof([\"description\", \"supplied\", \"information\", \"http\", \"https\", \"www\", \"australia\", \"australian\", \"queensland\", \"brisbane\", \"south\", \"north\", \"east\", \"west\", \"first\", \"around\", \"outside\", \"known\", \"looking\", \"standing\", \"large\", \"built\", \"photograph\", \"photographs\", \"area\", \"upon\", \"circa\", \"early\", \"view\", \"views\", \"showing\", \"john\", \"morgan\", \"state\", \"original\", \"collection\", \"held\", \"negative\", \"number\"], datum.word) < 0"
+        },
+        {
+          "type": "formula",
+          "expr": "indexof(['Before 1900','1900-1919','1920-1939','1940 onwards'], datum.era)",
+          "as": "ord"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "op",
+      "type": "linear",
+      "domain": {
+        "data": "words",
+        "field": "n"
+      },
+      "range": [
+        0.45,
+        1
+      ]
+    }
+  ],
+  "layout": {
+    "columns": 2,
+    "padding": {
+      "row": 18,
+      "column": 20
+    },
+    "align": "each"
+  },
+  "marks": [
+    {
+      "type": "group",
+      "from": {
+        "facet": {
+          "name": "f",
+          "data": "words",
+          "groupby": [
+            "era",
+            "ord"
+          ]
+        }
+      },
+      "sort": {
+        "field": "datum.ord"
+      },
+      "encode": {
+        "enter": {
+          "width": {
+            "value": 380
+          },
+          "height": {
+            "value": 200
+          }
+        }
+      },
+      "title": {
+        "text": {
+          "signal": "parent.era"
+        },
+        "anchor": "start",
+        "font": "Playfair Display, Georgia, serif",
+        "fontSize": 14,
+        "color": "#2b2118",
+        "offset": 6
+      },
+      "marks": [
+        {
+          "type": "text",
+          "from": {
+            "data": "f"
+          },
+          "encode": {
+            "enter": {
+              "text": {
+                "field": "word"
+              },
+              "align": {
+                "value": "center"
+              },
+              "baseline": {
+                "value": "alphabetic"
+              },
+              "fill": {
+                "value": "#8c3b2a"
+              }
+            },
+            "update": {
+              "fillOpacity": {
+                "scale": "op",
+                "field": "n"
+              }
+            }
+          },
+          "transform": [
+            {
+              "type": "wordcloud",
+              "size": [
+                380,
+                200
+              ],
+              "text": {
+                "field": "word"
+              },
+              "rotate": 0,
+              "font": "Source Serif 4, Georgia, serif",
+              "fontSize": {
+                "field": "datum.n"
+              },
+              "fontSizeRange": [
+                11,
+                34
+              ],
+              "padding": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

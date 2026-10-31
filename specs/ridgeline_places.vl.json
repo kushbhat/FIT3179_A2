@@ -1,0 +1,181 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Section 4: when each of the eight most-photographed places was photographed.",
+  "data": {
+    "url": "data/year_place.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "bin5": "number",
+        "n": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "filter": "datum.bin5 >= 1860 && datum.bin5 <= 1955"
+    },
+    {
+      "calculate": "replace(datum.place, ', Queensland', '')",
+      "as": "town"
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "n",
+          "as": "total"
+        }
+      ],
+      "groupby": [
+        "town"
+      ]
+    },
+    {
+      "calculate": "datum.n / datum.total",
+      "as": "share"
+    },
+    {
+      "impute": "share",
+      "key": "bin5",
+      "groupby": [
+        "town",
+        "total"
+      ],
+      "keyvals": {
+        "start": 1860,
+        "stop": 1960,
+        "step": 5
+      },
+      "value": 0
+    }
+  ],
+  "facet": {
+    "row": {
+      "field": "town",
+      "type": "nominal",
+      "title": null,
+      "sort": {
+        "field": "total",
+        "op": "max",
+        "order": "descending"
+      },
+      "header": {
+        "labelAngle": 0,
+        "labelAlign": "right",
+        "labelPadding": 8,
+        "labelFontSize": 12,
+        "labelColor": "#2b2118"
+      }
+    }
+  },
+  "spacing": -22,
+  "spec": {
+    "width": 520,
+    "height": 50,
+    "mark": {
+      "type": "area",
+      "interpolate": "monotone",
+      "fill": "#8c3b2a",
+      "fillOpacity": 0.75,
+      "stroke": "#f4ecdc",
+      "strokeWidth": 1
+    },
+    "encoding": {
+      "x": {
+        "field": "bin5",
+        "type": "quantitative",
+        "scale": {
+          "domain": [
+            1860,
+            1955
+          ],
+          "nice": false
+        },
+        "axis": {
+          "values": [
+            1860,
+            1870,
+            1880,
+            1890,
+            1900,
+            1910,
+            1920,
+            1930,
+            1940,
+            1950
+          ],
+          "labelExpr": "datum.value + 's'",
+          "title": null,
+          "grid": false,
+          "labelAngle": 0
+        }
+      },
+      "y": {
+        "field": "share",
+        "type": "quantitative",
+        "scale": {
+          "domain": [
+            0,
+            0.3
+          ],
+          "range": [
+            50,
+            -15
+          ]
+        },
+        "axis": null
+      },
+      "tooltip": [
+        {
+          "field": "town",
+          "title": "Place"
+        },
+        {
+          "field": "bin5",
+          "title": "Five years from"
+        },
+        {
+          "field": "n",
+          "title": "Photos",
+          "format": ","
+        }
+      ]
+    }
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "#f4ecdc",
+    "font": "Source Serif 4, Georgia, serif",
+    "axis": {
+      "labelColor": "#6f6254",
+      "titleColor": "#2b2118",
+      "gridColor": "#e2d6bf",
+      "domainColor": "#b9a98e",
+      "tickColor": "#b9a98e",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFont": "Source Serif 4, Georgia, serif",
+      "labelFont": "Source Serif 4, Georgia, serif"
+    },
+    "legend": {
+      "labelColor": "#6f6254",
+      "titleColor": "#2b2118",
+      "labelFont": "Source Serif 4, Georgia, serif",
+      "titleFont": "Source Serif 4, Georgia, serif"
+    },
+    "title": {
+      "color": "#2b2118",
+      "font": "Playfair Display, Georgia, serif",
+      "fontSize": 15,
+      "anchor": "start",
+      "subtitleColor": "#6f6254",
+      "subtitleFont": "Source Serif 4, Georgia, serif"
+    },
+    "facet": {
+      "spacing": -22
+    }
+  }
+}

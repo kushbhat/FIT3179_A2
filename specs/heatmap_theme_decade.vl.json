@@ -1,0 +1,173 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Section 4: share of each decade's photos whose caption mentions each theme.",
+  "width": 560,
+  "height": 230,
+  "data": {
+    "url": "data/decade_theme.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "decade": "number",
+        "n": "number",
+        "decade_photos": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "filter": "datum.decade >= 1860 && datum.decade <= 1950"
+    },
+    {
+      "aggregate": [
+        {
+          "op": "sum",
+          "field": "n",
+          "as": "mentions"
+        },
+        {
+          "op": "max",
+          "field": "decade_photos",
+          "as": "dp"
+        }
+      ],
+      "groupby": [
+        "decade",
+        "theme"
+      ]
+    },
+    {
+      "calculate": "datum.mentions / datum.dp",
+      "as": "share"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "decade",
+      "type": "ordinal",
+      "axis": {
+        "labelExpr": "datum.value + 's'",
+        "title": null,
+        "labelAngle": 0,
+        "orient": "top"
+      }
+    },
+    "y": {
+      "field": "theme",
+      "type": "nominal",
+      "title": null,
+      "axis": {
+        "labelLimit": 220
+      },
+      "sort": {
+        "field": "share",
+        "op": "mean",
+        "order": "descending"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "#f4ecdc",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "color": {
+          "field": "share",
+          "type": "quantitative",
+          "scale": {
+            "range": [
+              "#f4ecdc",
+              "#c9a227",
+              "#8c3b2a"
+            ],
+            "domain": [
+              0,
+              0.2,
+              0.45
+            ]
+          },
+          "legend": {
+            "title": "Share of photos",
+            "format": "%",
+            "orient": "right"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "theme",
+            "title": "Theme"
+          },
+          {
+            "field": "decade",
+            "title": "Decade starting"
+          },
+          {
+            "field": "mentions",
+            "title": "Photos",
+            "format": ","
+          },
+          {
+            "field": "share",
+            "title": "Share of decade",
+            "format": ".0%"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 10
+      },
+      "encoding": {
+        "text": {
+          "field": "share",
+          "type": "quantitative",
+          "format": ".0%"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.share > 0.3",
+            "value": "#fbf6ea"
+          },
+          "value": "#2b2118"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "#f4ecdc",
+    "font": "Source Serif 4, Georgia, serif",
+    "axis": {
+      "labelColor": "#6f6254",
+      "titleColor": "#2b2118",
+      "gridColor": "#e2d6bf",
+      "domainColor": "#b9a98e",
+      "tickColor": "#b9a98e",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFont": "Source Serif 4, Georgia, serif",
+      "labelFont": "Source Serif 4, Georgia, serif"
+    },
+    "legend": {
+      "labelColor": "#6f6254",
+      "titleColor": "#2b2118",
+      "labelFont": "Source Serif 4, Georgia, serif",
+      "titleFont": "Source Serif 4, Georgia, serif"
+    },
+    "title": {
+      "color": "#2b2118",
+      "font": "Playfair Display, Georgia, serif",
+      "fontSize": 15,
+      "anchor": "start",
+      "subtitleColor": "#6f6254",
+      "subtitleFont": "Source Serif 4, Georgia, serif"
+    }
+  }
+}

@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Whose Queensland Is in the Archive?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#f4ecdc; --ink:#2b2118; --muted:#6f6254; --accent:#8c3b2a; --land:#e8dcc4; --grid:#e2d6bf; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font:400 18px/1.6 "Source Serif 4", Georgia, serif; }
+  main { max-width:860px; margin:0 auto; padding:48px 20px 80px; }
+  h1, h2 { font-family:"Playfair Display", Georgia, serif; line-height:1.15; }
+  h1 { font-weight:800; font-size:2.7rem; margin:0 0 .35em; }
+  h2 { font-weight:600; font-size:1.65rem; margin:.1em 0 .5em; }
+  .kicker { font:600 .78rem/1 system-ui, sans-serif; letter-spacing:.12em; text-transform:uppercase;
+            color:var(--accent); margin-top:4rem; }
+  p.text { max-width:62ch; margin:0 0 1em; }
+  .lede { font-size:1.2rem; color:var(--muted); max-width:58ch; }
+  .stats { display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; margin:2rem 0 0;
+           border-top:1px solid var(--grid); border-bottom:1px solid var(--grid); padding:1.2rem 0; }
+  .stat b { display:block; font:800 2.2rem/1.1 "Playfair Display", Georgia, serif; color:var(--accent); }
+  .stat span { font:400 .85rem/1.35 system-ui, sans-serif; color:var(--muted); }
+  figure { margin:1.8rem 0 0; }
+  .chart { overflow-x:auto; }                 /* a chart scrolls inside its own box, never the whole page */
+  figcaption { font:400 .85rem/1.4 system-ui, sans-serif; color:var(--muted); margin-top:.6rem; max-width:70ch; }
+  .row { display:grid; grid-template-columns:auto auto; gap:24px; align-items:start; justify-content:start; }
+  .row figure { margin-top:1.8rem; min-width:0; }
+  @media (max-width: 900px) { .row { grid-template-columns:1fr; } }
+  .todo { background:#fff3c4; border-left:4px solid #c9a227; padding:.4rem .7rem; font:400 .85rem/1.4 system-ui, sans-serif; }
+  .note { font:400 .9rem/1.5 system-ui, sans-serif; color:var(--muted); max-width:62ch; border-left:3px solid var(--accent); padding-left:.8rem; margin-top:1.5rem; }
+  footer { margin-top:5rem; font:400 .85rem/1.55 system-ui, sans-serif; color:var(--muted);
+           border-top:1px solid var(--grid); padding-top:1rem; }
+  footer h3 { font:600 .8rem/1 system-ui, sans-serif; letter-spacing:.1em; text-transform:uppercase; color:var(--ink); margin:1.2rem 0 .4rem; }
+  footer ul { margin:0; padding-left:1.1rem; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Whose Queensland Is in the Archive?</h1>
+    <p class="lede">The State Library of Queensland has put tens of thousands of old photographs online. They are
+      a window on the past, but a window has a frame. Who and what did the camera pick out, and who was left
+      outside it?</p>
+    <div class="stats">
+      <div class="stat"><b>52,118</b><span>photographs in the library’s Picture Queensland collection file</span></div>
+      <div class="stat"><b>9 in 10</b><span>are black and white; only 142 are in colour</span></div>
+      <div class="stat"><b>1 in 3</b><span>has no recorded location, so it can’t appear on any map</span></div>
+    </div>
+    <p class="note">A note on what is missing: this file is labelled as <em>non-Aboriginal and Torres Strait Islander</em> material. Collections like this are kept separate from First Nations material so that it can be handled under its own cultural protocols. This page therefore shows Queensland as seen through the photographs in this part of the archive, and it is not a complete record of the state’s people.</p>
+  </header>
+
+  <section id="meet">
+    <div class="kicker">1 · Meet the archive</div>
+    <h2>A Queensland of the early twentieth century</h2>
+    <p class="text">Almost all of the photographs that carry both a date and a place were taken between the
+      1860s and the 1950s. The collection builds to a peak in the 1920s, then falls away sharply near the 1950s. Most of these images are
+      anonymous: fewer than one in ten names the person who took the photograph.</p>
+    <div class="row">
+      <figure>
+        <div id="area-decades" class="chart"></div>
+        <figcaption>Photos that have both a date and a place, by decade. Source: State Library of Queensland.</figcaption>
+      </figure>
+      <figure>
+        <div id="waffle" class="chart"></div>
+        <figcaption>Source: State Library of Queensland.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="where">
+    <div class="kicker">2 · Where</div>
+    <h2>The camera kept returning to the south-east</h2>
+    <p class="text">We look at the distribution of images taken in Queensland over time. Each circle below is a town or suburb; its area shows how many photographs were catalogued
+      there. Place names are matched to the centre of the town, not the exact spot where the picture was taken.</p>
+    <figure>
+      <div id="map-by-era" class="chart"></div>
+      <figcaption>Photographed places by era. Circle area is proportional to the number of photos. Photos
+        without a recorded location (about one third) are not shown. Source: State Library of Queensland.</figcaption>
+    </figure>
+    <p class="text" style="margin-top:1.6rem">Nearly four in ten photographs that have a location are in the City of
+      Brisbane. Beyond the capital, a chain of coastal towns stands out, and so do Toowoomba and Warwick inland.</p>
+    <div class="row">
+      <figure>
+        <div id="density-grid" class="chart"></div>
+        <figcaption>Photos with a location, counted in squares laid over the state. Darker squares hold more
+          photos. Source: State Library of Queensland.</figcaption>
+      </figure>
+      <figure>
+        <div id="bar-places" class="chart"></div>
+        <figcaption>The ten most-photographed places, as named in the catalogue. Photos catalogued to a Brisbane
+          suburb count under that suburb, so Brisbane looks smaller here than in the council-area figures below.
+          Source: State Library of Queensland.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="missing">
+    <div class="kicker">3 · Photographs versus people</div>
+    <h2>Who lives where, and who got photographed</h2>
+    <p class="text">Nearly 38% of the photographs with a location are in the City of Brisbane, which is home to about
+      24% of Queenslanders today. Look at the areas around it: the Gold Coast, Moreton Bay and Logan together are
+      home to about 29% of Queenslanders but hold less than 4% of the photographs.</p>
+    <figure>
+      <div id="choropleth" class="chart"></div>
+      <figcaption>Brown areas have a bigger share of the photographs than of today’s residents; blue areas
+        have a smaller one. The right-hand map zooms in on the south-east corner. Photos are matched to today’s
+        council areas. Population: ABS estimated resident population, June 2025 (preliminary).
+        Boundaries: ABS Local Government Areas 2025.</figcaption>
+    </figure>
+    <figure>
+      <div id="bar-lga" class="chart"></div>
+      <figcaption>The eight council areas furthest above, and furthest below, their share of residents.
+        Source: State Library of Queensland; ABS.</figcaption>
+    </figure>
+    <p class="text" style="margin-top:1.6rem">Brisbane is first in every era. Behind it the order changes: only five council areas stay in the top twelve for photographs in every era.</p>
+    <figure>
+      <div id="bump" class="chart"></div>
+      <figcaption>Rank of each council area by number of photos in each era (1 is the most photographed). Only areas that stay in the top 12 in every era are shown. Source: State Library of Queensland; photos matched to today’s council areas.</figcaption>
+    </figure>
+
+  </section>
+
+  <section id="what">
+    <div class="kicker">4 · What was photographed</div>
+    <h2>What the camera pointed at</h2>
+    <p class="text">Captions give a rough idea of the subject. The chart below counts how often each theme
+      appears in the photos of each decade. One photograph can touch several themes, so the shares do not
+      add to 100%. Themes come from simple keyword matching and are a guide only. Buildings and streets lead in every decade, but war and the military jump to about a third of the photos in the 1940s.</p>
+    <figure>
+      <div id="heatmap" class="chart"></div>
+      <figcaption>Share of each decade’s photos whose caption mentions each theme. Source: State Library of
+        Queensland; themes assigned by keyword matching.</figcaption>
+    </figure>
+    <p class="text" style="margin-top:1.6rem">Buildings and streets remain the most photographed theme in every decade, followed by landscape, farming and transport. A notable jump comes in the 1940s: with the onslaught of the Second World War, the share of images with a war context rises to 32%.</p>
+    <figure>
+      <div id="stream" class="chart"></div>
+      <figcaption>The same themes as a flowing band: the thicker the band, the more often the theme is mentioned in that decade. Source: State Library of Queensland; themes assigned by keyword matching.</figcaption>
+    </figure>
+    <figure>
+      <div id="treemap" class="chart"></div>
+      <figcaption>Themes in the captions of photos with a date and a place. Each theme box is split by era of the photo; box area shows how often the theme is mentioned (a photo can mention several). Hover a box for the numbers. Source: State Library of Queensland; themes assigned by keyword matching.</figcaption>
+    </figure>
+    <p class="text" style="margin-top:1.6rem">Different towns were photographed at different times. Some places,
+      such as Mount Isa, have sharp bursts of photographs; others, such as Brisbane, are spread across the whole period.</p>
+    <figure>
+      <div id="ridgeline" class="chart"></div>
+      <figcaption>When each of the eight most-photographed places was photographed. Each row shows the share of
+        that place’s photos taken in each five-year period. Source: State Library of Queensland.</figcaption>
+    </figure>
+    <p class="text" style="margin-top:1.6rem">Finally, the words themselves: the most common words in the
+      captions, era by era.</p>
+    <figure>
+      <div id="wordcloud" class="chart"></div>
+      <figcaption>Most common words in titles and descriptions, by era. Larger and darker means more frequent.
+        Source: State Library of Queensland.</figcaption>
+    </figure>
+  </section>
+
+  <footer>
+    <h3>Author and date</h3>
+    <p>Kushagrae Bhatnagar · FIT3179 Data Visualisation 2, Monash University · 31 October 2026</p>
+    <h3>Data sources</h3>
+    <ul>
+      <li>State Library of Queensland, <em>Picture Queensland</em> digital image collection (copyright-expired
+        photographs). <a href="https://www.data.qld.gov.au/dataset/picture-queensland">data.qld.gov.au/dataset/picture-queensland</a>.
+        Licence: Creative Commons Attribution 4.0 (CC BY 4.0).</li>
+      <li>Australian Bureau of Statistics, <em>Regional population, 2024–25</em>: estimated resident population
+        by Local Government Area, 2001 to 2025 (released 31 March 2026). Data service: <a href="https://geo.abs.gov.au/arcgis/rest/services/Hosted/LGA_Regional_Population_2025/FeatureServer/1">geo.abs.gov.au</a>. Figures for 2025 are preliminary. © Commonwealth of Australia (ABS), CC BY 4.0.</li>
+      <li>Australian Bureau of Statistics, ASGS Edition 3 Local Government Areas 2025 (digital boundaries).
+        <a href="https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files">abs.gov.au (digital boundary files)</a>.
+        These are statistical approximations of council boundaries.</li>
+    </ul>
+    <h3>Method notes</h3>
+    <ul>
+      <li>Dates were read from the catalogue’s date field; where it was blank, a decade stated in the subject field was used.</li>
+      <li>Places were located using the coordinates in the catalogue record, which point to the town or suburb centre.</li>
+      <li>Themes are keyword matches on titles, descriptions and subjects.</li>
+    </ul>
+    <h3>Use of AI</h3>
+    <p>Claude (Anthropic) was used to help write the data-preparation scripts, the chart specifications and the page layout, and to check the grammar of the text. The data, the choice of story and the final text were reviewed by the author.</p>
+  </footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/vega@6.4.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@7.3.0"></script>
+<script>
+  // Every chart: the element on the page and its human-readable spec file in /specs.
+  const charts = [
+    { el: "#area-decades", spec: "specs/area_decades.vl.json" },
+    { el: "#waffle",       spec: "specs/waffle_attribution.vl.json" },
+    { el: "#map-by-era",   spec: "specs/map_by_era.vl.json" },
+    { el: "#density-grid",  spec: "specs/density_grid.vg.json" },
+    { el: "#bar-places",   spec: "specs/bar_top_places.vl.json" },
+    { el: "#choropleth",   spec: "specs/choropleth_share.vl.json" },
+    { el: "#bar-lga",      spec: "specs/diverging_bar_lga.vl.json" },
+    { el: "#heatmap",      spec: "specs/heatmap_theme_decade.vl.json" },
+    { el: "#treemap",      spec: "specs/treemap_kind_theme.vg.json" },
+    { el: "#stream",       spec: "specs/streamgraph_themes.vl.json" },
+    { el: "#bump",         spec: "specs/bump_lga_rank.vl.json" },
+    { el: "#ridgeline",    spec: "specs/ridgeline_places.vl.json" },
+    { el: "#wordcloud",    spec: "specs/wordcloud_era.vg.json" }
+  ];
+  // Wait for the web fonts so the word cloud measures words with the right typeface.
+  const fontsReady = Promise.all([
+    document.fonts.load('18px "Source Serif 4"'),
+    document.fonts.load('600 18px "Playfair Display"')
+  ]).catch(() => {});
+  fontsReady.then(() => charts.forEach(c =>
+    vegaEmbed(c.el, c.spec, { actions: false, renderer: "svg" })
+      .catch(err => { console.error(c.spec, err); document.querySelector(c.el).textContent = "Chart failed to load: " + c.spec; })));
+</script>
+</body>
+</html>

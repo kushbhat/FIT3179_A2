@@ -1,0 +1,391 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "description": "Section 2: how many photos fall in each square of a grid laid over Queensland.",
+  "width": 440,
+  "height": 520,
+  "padding": 5,
+  "autosize": "none",
+  "background": "#f4ecdc",
+  "projections": [
+    {
+      "name": "proj",
+      "type": "conicEqualArea",
+      "rotate": [
+        -146,
+        0
+      ],
+      "center": [
+        0,
+        -19.5
+      ],
+      "parallels": [
+        -12,
+        -26
+      ],
+      "scale": 1400,
+      "translate": [
+        220.0,
+        260.0
+      ]
+    }
+  ],
+  "data": [
+    {
+      "name": "outline",
+      "url": "data/qld_lga.geojson",
+      "format": {
+        "type": "json",
+        "property": "features"
+      }
+    },
+    {
+      "name": "cells",
+      "url": "data/places_all.csv",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "lat": "number",
+          "lon": "number",
+          "n": "number"
+        }
+      },
+      "transform": [
+        {
+          "type": "geopoint",
+          "projection": "proj",
+          "fields": [
+            "lon",
+            "lat"
+          ],
+          "as": [
+            "px",
+            "py"
+          ]
+        },
+        {
+          "type": "filter",
+          "expr": "datum.px != null && datum.py != null"
+        },
+        {
+          "type": "bin",
+          "field": "px",
+          "extent": [
+            0,
+            440
+          ],
+          "step": 9,
+          "as": [
+            "x0",
+            "x1"
+          ]
+        },
+        {
+          "type": "bin",
+          "field": "py",
+          "extent": [
+            0,
+            520
+          ],
+          "step": 9,
+          "as": [
+            "y0",
+            "y1"
+          ]
+        },
+        {
+          "type": "aggregate",
+          "groupby": [
+            "x0",
+            "x1",
+            "y0",
+            "y1"
+          ],
+          "fields": [
+            "n"
+          ],
+          "ops": [
+            "sum"
+          ],
+          "as": [
+            "photos"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "bris",
+      "values": [
+        {
+          "lon": 153.0228,
+          "lat": -27.4689
+        }
+      ],
+      "transform": [
+        {
+          "type": "geopoint",
+          "projection": "proj",
+          "fields": [
+            "lon",
+            "lat"
+          ],
+          "as": [
+            "px",
+            "py"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lg",
+      "values": [
+        {
+          "i": 0,
+          "v": 1,
+          "t": "1 to 9"
+        },
+        {
+          "i": 1,
+          "v": 10,
+          "t": "10 to 49"
+        },
+        {
+          "i": 2,
+          "v": 50,
+          "t": "50 to 199"
+        },
+        {
+          "i": 3,
+          "v": 200,
+          "t": "200 to 999"
+        },
+        {
+          "i": 4,
+          "v": 1000,
+          "t": "1,000 or more"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "c",
+      "type": "threshold",
+      "domain": [
+        10,
+        50,
+        200,
+        1000
+      ],
+      "range": [
+        "#f2dfbf",
+        "#e6bf8f",
+        "#cf8d62",
+        "#a9553c",
+        "#6e2418"
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "type": "shape",
+      "from": {
+        "data": "outline"
+      },
+      "encode": {
+        "enter": {
+          "fill": {
+            "value": "#e8dcc4"
+          },
+          "stroke": {
+            "value": "#d3c3a0"
+          },
+          "strokeWidth": {
+            "value": 0.35
+          }
+        }
+      },
+      "transform": [
+        {
+          "type": "geoshape",
+          "projection": "proj"
+        }
+      ]
+    },
+    {
+      "type": "rect",
+      "from": {
+        "data": "cells"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "field": "x0"
+          },
+          "x2": {
+            "field": "x1"
+          },
+          "y": {
+            "field": "y0"
+          },
+          "y2": {
+            "field": "y1"
+          },
+          "fill": {
+            "scale": "c",
+            "field": "photos"
+          },
+          "stroke": {
+            "value": "#f4ecdc"
+          },
+          "strokeWidth": {
+            "value": 0.6
+          },
+          "tooltip": {
+            "signal": "format(datum.photos, ',') + ' photos in this square'"
+          }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 8
+          },
+          "y": {
+            "value": 312
+          },
+          "width": {
+            "value": 238
+          },
+          "height": {
+            "value": 44
+          },
+          "fill": {
+            "value": "#f4ecdc"
+          },
+          "fillOpacity": {
+            "value": 0.92
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 16
+          },
+          "y": {
+            "value": 317
+          },
+          "align": {
+            "value": "left"
+          },
+          "baseline": {
+            "value": "top"
+          },
+          "fontSize": {
+            "value": 12
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "#2b2118"
+          },
+          "lineHeight": {
+            "value": 16
+          },
+          "text": {
+            "value": [
+              "Nearly 4 in 10 photos with a place",
+              "are in the City of Brisbane (bottom right)"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 10
+          },
+          "y": {
+            "value": 402
+          },
+          "text": {
+            "value": "Photos in each square"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "#2b2118"
+          }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "from": {
+        "data": "lg"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 10
+          },
+          "y": {
+            "signal": "416 + datum.i * 17"
+          },
+          "width": {
+            "value": 14
+          },
+          "height": {
+            "value": 14
+          },
+          "fill": {
+            "scale": "c",
+            "field": "v"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "lg"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 30
+          },
+          "y": {
+            "signal": "416 + datum.i * 17 + 7"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "text": {
+            "field": "t"
+          },
+          "fontSize": {
+            "value": 10
+          },
+          "fill": {
+            "value": "#6f6254"
+          }
+        }
+      }
+    }
+  ]
+}

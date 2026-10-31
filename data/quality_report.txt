@@ -1,0 +1,16 @@
+rows in CSV: 52118
+with parsable coordinates: 35230 (67.6%)
+  inside Queensland box: 34546; outside: 684
+unique places (lat/lon): 5269
+kind (all rows): {'Everything else': 36720, 'Portraits': 10740, 'Ships': 4658}
+Brisbane rows by kind: {'Everything else': 5210, 'Portraits': 988, 'Ships': 151}
+dated by decade (all kinds): {1790: 1, 1820: 4, 1830: 7, 1840: 7, 1850: 18, 1860: 344, 1870: 1120, 1880: 1581, 1890: 2899, 1900: 4393, 1910: 4886, 1920: 5300, 1930: 4719, 1940: 2180, 1950: 1370, 1960: 100, 1970: 60, 1980: 58, 1990: 24, 2000: 53}
+year quality (all rows): {'dated': 35894, 'undated': 16072, 'decade from subject': 126, 'wide range': 26}
+dated and located (used in era charts): 29124
+named photographer: 8.7%
+tone: {'Black and white': 47659, 'Sepia': 3014, 'Not stated': 1303, 'Colour': 142}
+top places (by name): {'Brisbane, Queensland': 6054, 'Bundaberg, Queensland': 747, 'Cairns, Queensland': 609, 'Mackay, Queensland': 560, 'Toowoomba, Queensland': 510, 'Warwick, Queensland': 470, 'Townsville, Queensland': 386, 'Mount Isa, Queensland': 376, 'Ipswich, Queensland': 363, 'Bowen, Queensland': 339}
+top collections: {'Picture Queensland (general)': 34970, 'Portraits': 10603, 'Ships': 4648, 'The Garage': 422, 'Len and Kath Shillam Papers': 264, 'State Library of Queensland': 256, 'Maps and Estate Maps': 245, 'Rawson Archive': 152, 'Food and drink labels': 142, 'Sheet music covers': 110, 'Postcards of Queensland': 101, 'Portraits Collection reference': 55}
+year range (dated): 1791 to 2008
+LGA join: 235 of 5269 places did not fall inside an LGA
+output sizes (bytes): {'attribution.csv': 60, 'collections.csv': 973, 'dating_quality.csv': 84, 'decade_theme.csv': 10835, 'decade_tone.csv': 1257, 'lga_all.csv': 5636, 'lga_era.csv': 22589, 'lga_erp_qld.csv': 12148, 'lga_share.csv': 2563, 'photos_by_decade.csv': 1000, 'places_all.csv': 473224, 'places_by_era.csv': 563131, 'places_top.csv': 1192, 'waffle_attribution.csv': 2170, 'words_by_era.csv': 3774, 'year_collection.csv': 2636, 'year_place.csv': 5096}; total 1108368

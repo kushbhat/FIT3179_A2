@@ -1,0 +1,483 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Section 2, chart 1: proportional symbol map of photographed places, one small map per era.",
+  "data": {
+    "url": "data/places_by_era.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "lat": "number",
+        "lon": "number",
+        "n": "number"
+      }
+    }
+  },
+  "columns": 2,
+  "spacing": 8,
+  "concat": [
+    {
+      "title": {
+        "text": "Before 1900",
+        "anchor": "start",
+        "fontSize": 14,
+        "font": "Playfair Display, Georgia, serif",
+        "color": "#2b2118"
+      },
+      "width": 270,
+      "height": 340,
+      "projection": {
+        "type": "conicEqualArea",
+        "rotate": [
+          -146,
+          0
+        ],
+        "parallels": [
+          -12,
+          -26
+        ]
+      },
+      "layer": [
+        {
+          "data": {
+            "url": "data/qld_lga.geojson",
+            "format": {
+              "type": "json",
+              "property": "features"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#e8dcc4",
+            "stroke": "#d3c3a0",
+            "strokeWidth": 0.35
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.era === 'Before 1900'"
+            },
+            {
+              "aggregate": [
+                {
+                  "op": "sum",
+                  "field": "n",
+                  "as": "photos"
+                }
+              ],
+              "groupby": [
+                "place",
+                "lat",
+                "lon"
+              ]
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "fill": "#8c3b2a",
+            "fillOpacity": 0.5,
+            "stroke": "#f4ecdc",
+            "strokeWidth": 0.4
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "size": {
+              "field": "photos",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  0,
+                  2000
+                ],
+                "range": [
+                  3,
+                  1600
+                ]
+              },
+              "legend": {
+                "title": "Photos per place",
+                "values": [
+                  100,
+                  500,
+                  1000,
+                  2000
+                ],
+                "orient": "right"
+              }
+            },
+            "tooltip": [
+              {
+                "field": "place",
+                "title": "Place"
+              },
+              {
+                "field": "photos",
+                "title": "Photos",
+                "format": ","
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "1900–1919",
+        "anchor": "start",
+        "fontSize": 14,
+        "font": "Playfair Display, Georgia, serif",
+        "color": "#2b2118"
+      },
+      "width": 270,
+      "height": 340,
+      "projection": {
+        "type": "conicEqualArea",
+        "rotate": [
+          -146,
+          0
+        ],
+        "parallels": [
+          -12,
+          -26
+        ]
+      },
+      "layer": [
+        {
+          "data": {
+            "url": "data/qld_lga.geojson",
+            "format": {
+              "type": "json",
+              "property": "features"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#e8dcc4",
+            "stroke": "#d3c3a0",
+            "strokeWidth": 0.35
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.era === '1900-1919'"
+            },
+            {
+              "aggregate": [
+                {
+                  "op": "sum",
+                  "field": "n",
+                  "as": "photos"
+                }
+              ],
+              "groupby": [
+                "place",
+                "lat",
+                "lon"
+              ]
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "fill": "#8c3b2a",
+            "fillOpacity": 0.5,
+            "stroke": "#f4ecdc",
+            "strokeWidth": 0.4
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "size": {
+              "field": "photos",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  0,
+                  2000
+                ],
+                "range": [
+                  3,
+                  1600
+                ]
+              },
+              "legend": {
+                "title": "Photos per place",
+                "values": [
+                  100,
+                  500,
+                  1000,
+                  2000
+                ],
+                "orient": "right"
+              }
+            },
+            "tooltip": [
+              {
+                "field": "place",
+                "title": "Place"
+              },
+              {
+                "field": "photos",
+                "title": "Photos",
+                "format": ","
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "1920–1939",
+        "anchor": "start",
+        "fontSize": 14,
+        "font": "Playfair Display, Georgia, serif",
+        "color": "#2b2118"
+      },
+      "width": 270,
+      "height": 340,
+      "projection": {
+        "type": "conicEqualArea",
+        "rotate": [
+          -146,
+          0
+        ],
+        "parallels": [
+          -12,
+          -26
+        ]
+      },
+      "layer": [
+        {
+          "data": {
+            "url": "data/qld_lga.geojson",
+            "format": {
+              "type": "json",
+              "property": "features"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#e8dcc4",
+            "stroke": "#d3c3a0",
+            "strokeWidth": 0.35
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.era === '1920-1939'"
+            },
+            {
+              "aggregate": [
+                {
+                  "op": "sum",
+                  "field": "n",
+                  "as": "photos"
+                }
+              ],
+              "groupby": [
+                "place",
+                "lat",
+                "lon"
+              ]
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "fill": "#8c3b2a",
+            "fillOpacity": 0.5,
+            "stroke": "#f4ecdc",
+            "strokeWidth": 0.4
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "size": {
+              "field": "photos",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  0,
+                  2000
+                ],
+                "range": [
+                  3,
+                  1600
+                ]
+              },
+              "legend": {
+                "title": "Photos per place",
+                "values": [
+                  100,
+                  500,
+                  1000,
+                  2000
+                ],
+                "orient": "right"
+              }
+            },
+            "tooltip": [
+              {
+                "field": "place",
+                "title": "Place"
+              },
+              {
+                "field": "photos",
+                "title": "Photos",
+                "format": ","
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "1940 onwards",
+        "anchor": "start",
+        "fontSize": 14,
+        "font": "Playfair Display, Georgia, serif",
+        "color": "#2b2118"
+      },
+      "width": 270,
+      "height": 340,
+      "projection": {
+        "type": "conicEqualArea",
+        "rotate": [
+          -146,
+          0
+        ],
+        "parallels": [
+          -12,
+          -26
+        ]
+      },
+      "layer": [
+        {
+          "data": {
+            "url": "data/qld_lga.geojson",
+            "format": {
+              "type": "json",
+              "property": "features"
+            }
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "#e8dcc4",
+            "stroke": "#d3c3a0",
+            "strokeWidth": 0.35
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.era === '1940 onwards'"
+            },
+            {
+              "aggregate": [
+                {
+                  "op": "sum",
+                  "field": "n",
+                  "as": "photos"
+                }
+              ],
+              "groupby": [
+                "place",
+                "lat",
+                "lon"
+              ]
+            }
+          ],
+          "mark": {
+            "type": "circle",
+            "fill": "#8c3b2a",
+            "fillOpacity": 0.5,
+            "stroke": "#f4ecdc",
+            "strokeWidth": 0.4
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "size": {
+              "field": "photos",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  0,
+                  2000
+                ],
+                "range": [
+                  3,
+                  1600
+                ]
+              },
+              "legend": {
+                "title": "Photos per place",
+                "values": [
+                  100,
+                  500,
+                  1000,
+                  2000
+                ],
+                "orient": "right"
+              }
+            },
+            "tooltip": [
+              {
+                "field": "place",
+                "title": "Place"
+              },
+              {
+                "field": "photos",
+                "title": "Photos",
+                "format": ","
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "size": "shared"
+    }
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "#f4ecdc",
+    "font": "Source Serif 4, Georgia, serif",
+    "legend": {
+      "labelColor": "#6f6254",
+      "titleColor": "#2b2118"
+    }
+  }
+}

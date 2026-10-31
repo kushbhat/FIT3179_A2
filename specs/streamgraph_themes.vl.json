@@ -1,0 +1,154 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Section 4: how often each theme appears in captions, decade by decade (streamgraph).",
+  "width": 640,
+  "height": 280,
+  "data": {
+    "url": "data/decade_theme.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "decade": "number",
+        "n": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "filter": "datum.decade >= 1860 && datum.decade <= 1950"
+    },
+    {
+      "aggregate": [
+        {
+          "op": "sum",
+          "field": "n",
+          "as": "mentions"
+        }
+      ],
+      "groupby": [
+        "decade",
+        "theme"
+      ]
+    }
+  ],
+  "mark": {
+    "type": "area",
+    "interpolate": "monotone",
+    "stroke": "#f4ecdc",
+    "strokeWidth": 0.6
+  },
+  "encoding": {
+    "x": {
+      "field": "decade",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          1860,
+          1950
+        ],
+        "nice": false
+      },
+      "axis": {
+        "values": [
+          1860,
+          1870,
+          1880,
+          1890,
+          1900,
+          1910,
+          1920,
+          1930,
+          1940,
+          1950
+        ],
+        "labelExpr": "datum.value + 's'",
+        "title": null,
+        "grid": false,
+        "labelAngle": 0
+      }
+    },
+    "y": {
+      "field": "mentions",
+      "type": "quantitative",
+      "stack": "center",
+      "axis": null
+    },
+    "color": {
+      "field": "theme",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Buildings and streets",
+          "Farming and industry",
+          "Landscape and water",
+          "Transport",
+          "People and social life",
+          "Other",
+          "War and military"
+        ],
+        "range": [
+          "#8c5a3c",
+          "#8f6f0a",
+          "#4f6d5a",
+          "#3b5b7a",
+          "#a4463b",
+          "#7a6f64",
+          "#6b4f7a"
+        ]
+      },
+      "legend": {
+        "title": "Theme",
+        "orient": "right"
+      }
+    },
+    "order": {
+      "field": "theme",
+      "type": "nominal"
+    },
+    "tooltip": [
+      {
+        "field": "theme",
+        "title": "Theme"
+      },
+      {
+        "field": "decade",
+        "title": "Decade starting"
+      },
+      {
+        "field": "mentions",
+        "title": "Caption mentions",
+        "format": ","
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "#f4ecdc",
+    "font": "Source Serif 4, Georgia, serif",
+    "axis": {
+      "labelColor": "#6f6254",
+      "titleColor": "#2b2118",
+      "gridColor": "#e2d6bf",
+      "domainColor": "#b9a98e",
+      "tickColor": "#b9a98e",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "titleFont": "Source Serif 4, Georgia, serif",
+      "labelFont": "Source Serif 4, Georgia, serif"
+    },
+    "legend": {
+      "labelColor": "#6f6254",
+      "titleColor": "#2b2118",
+      "labelFont": "Source Serif 4, Georgia, serif",
+      "titleFont": "Source Serif 4, Georgia, serif"
+    },
+    "title": {
+      "color": "#2b2118",
+      "font": "Playfair Display, Georgia, serif",
+      "fontSize": 15,
+      "anchor": "start"
+    }
+  }
+}

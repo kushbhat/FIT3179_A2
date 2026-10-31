@@ -1,0 +1,278 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v6.json",
+  "description": "Section 4: themes in photo captions, each split by the era of the photo.",
+  "width": 780,
+  "height": 440,
+  "padding": 5,
+  "autosize": "pad",
+  "background": "#f4ecdc",
+  "data": [
+    {
+      "name": "raw",
+      "url": "data/decade_theme.csv",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "n": "number",
+          "decade": "number"
+        }
+      },
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.decade >= 1860 && datum.decade <= 1950"
+        },
+        {
+          "type": "formula",
+          "expr": "datum.decade < 1900 ? 'Before 1900' : (datum.decade < 1920 ? '1900-1919' : (datum.decade < 1940 ? '1920-1939' : '1940 onwards'))",
+          "as": "era"
+        }
+      ]
+    },
+    {
+      "name": "leaf",
+      "source": "raw",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": [
+            "theme",
+            "era"
+          ],
+          "fields": [
+            "n"
+          ],
+          "ops": [
+            "sum"
+          ],
+          "as": [
+            "size"
+          ]
+        },
+        {
+          "type": "formula",
+          "expr": "datum.theme + '|' + datum.era",
+          "as": "id"
+        },
+        {
+          "type": "formula",
+          "expr": "datum.theme",
+          "as": "parent"
+        }
+      ]
+    },
+    {
+      "name": "mid",
+      "source": "raw",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": [
+            "theme"
+          ],
+          "fields": [
+            "n"
+          ],
+          "ops": [
+            "sum"
+          ],
+          "as": [
+            "total"
+          ]
+        },
+        {
+          "type": "formula",
+          "expr": "datum.theme",
+          "as": "id"
+        },
+        {
+          "type": "formula",
+          "expr": "'root'",
+          "as": "parent"
+        }
+      ]
+    },
+    {
+      "name": "rootnode",
+      "values": [
+        {
+          "id": "root",
+          "parent": null
+        }
+      ]
+    },
+    {
+      "name": "tree",
+      "source": [
+        "rootnode",
+        "mid",
+        "leaf"
+      ],
+      "transform": [
+        {
+          "type": "stratify",
+          "key": "id",
+          "parentKey": "parent"
+        },
+        {
+          "type": "treemap",
+          "field": "size",
+          "sort": {
+            "field": "value",
+            "order": "descending"
+          },
+          "method": "squarify",
+          "ratio": 1.4,
+          "size": [
+            780,
+            440
+          ],
+          "paddingInner": 2,
+          "paddingOuter": 3,
+          "paddingTop": 22,
+          "round": true
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "era",
+      "type": "ordinal",
+      "domain": [
+        "Before 1900",
+        "1900-1919",
+        "1920-1939",
+        "1940 onwards"
+      ],
+      "range": [
+        "#e3c89a",
+        "#d49a5a",
+        "#a85a3a",
+        "#5a2a1f"
+      ]
+    }
+  ],
+  "legends": [
+    {
+      "fill": "era",
+      "title": "Era of the photo",
+      "orient": "bottom",
+      "direction": "horizontal",
+      "symbolType": "square",
+      "symbolSize": 160,
+      "titleColor": "#2b2118",
+      "labelColor": "#2b2118",
+      "labelFontSize": 12,
+      "titleFontSize": 12,
+      "columnPadding": 22
+    }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "from": {
+        "data": "tree"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "field": "x0"
+          },
+          "y": {
+            "field": "y0"
+          },
+          "x2": {
+            "field": "x1"
+          },
+          "y2": {
+            "field": "y1"
+          }
+        },
+        "update": {
+          "fill": {
+            "signal": "datum.depth == 2 ? scale('era', datum.era) : (datum.depth == 1 ? '#e2d3b8' : 'transparent')"
+          },
+          "tooltip": {
+            "signal": "datum.depth == 2 ? {'Theme': datum.theme, 'Era': datum.era, 'Caption mentions': format(datum.size, ',')} : (datum.depth == 1 ? {'Theme': datum.theme, 'Caption mentions': format(datum.total, ',')} : null)"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "tree"
+      },
+      "encode": {
+        "enter": {
+          "baseline": {
+            "value": "top"
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fontSize": {
+            "value": 13
+          },
+          "fill": {
+            "value": "#2b2118"
+          },
+          "font": {
+            "value": "Source Serif 4, Georgia, serif"
+          }
+        },
+        "update": {
+          "x": {
+            "signal": "datum.x0 + 6"
+          },
+          "y": {
+            "signal": "datum.y0 + 4"
+          },
+          "limit": {
+            "signal": "datum.x1 - datum.x0 - 10"
+          },
+          "text": {
+            "signal": "datum.depth == 1 ? datum.theme : ''"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "tree"
+      },
+      "encode": {
+        "enter": {
+          "baseline": {
+            "value": "top"
+          },
+          "fontSize": {
+            "value": 10.5
+          },
+          "font": {
+            "value": "Source Serif 4, Georgia, serif"
+          }
+        },
+        "update": {
+          "x": {
+            "signal": "datum.x0 + 4"
+          },
+          "y": {
+            "signal": "datum.y0 + 3"
+          },
+          "limit": {
+            "signal": "datum.x1 - datum.x0 - 6"
+          },
+          "fill": {
+            "signal": "indexof(['1920-1939','1940 onwards'], datum.era) >= 0 ? '#fbf6ea' : '#2b2118'"
+          },
+          "text": {
+            "signal": "datum.depth == 2 && (datum.y1 - datum.y0) > 16 && (datum.x1 - datum.x0) > 54 ? replace(datum.era, 'Before ', '<') : ''"
+          }
+        }
+      }
+    }
+  ]
+}
